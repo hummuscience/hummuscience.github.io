@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Opinionated Muad</title>
+    <link>http://cumol.org/notes/</link>
+    <description>Recent content in Notes on Opinionated Muad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Sep 2023 23:02:57 +0200</lastBuildDate><atom:link href="http://cumol.org/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Psychedelics</title>
+      <link>http://cumol.org/notes/20220405102340-psychedelics/</link>
+      <pubDate>Sun, 17 Sep 2023 23:02:57 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20220405102340-psychedelics/</guid>
+      <description>Notes Problems with the usage of non-scheduled psychedelics for animal research Due to the fact that classic psychedelics were scheduled, scientists used other compounds instead for animal research, such as DOI. The issue with that are twofolds:
+ There is little human data on the usage of such alternatives (such as DOI), neither in a clinical setting or recreational use. The pharmacology of these compounds differs. While, for example, both DOI and LSD bind to the 5-HT2A-receptor and the 5-HT2C-receptor, DOI does not bind to other receptors that might influence the effects of compounds.</description>
+    </item>
+    
+    <item>
+      <title>5-HT2C-receptor</title>
+      <link>http://cumol.org/notes/20220405104300-5_ht2c_receptor/</link>
+      <pubDate>Sun, 17 Sep 2023 22:59:10 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20220405104300-5_ht2c_receptor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>5-HT2A-receptor</title>
+      <link>http://cumol.org/notes/20220405104217-5_ht2a_receptor/</link>
+      <pubDate>Sun, 17 Sep 2023 22:59:00 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20220405104217-5_ht2a_receptor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DOI</title>
+      <link>http://cumol.org/notes/20220405103750-doi/</link>
+      <pubDate>Sun, 17 Sep 2023 22:58:47 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20220405103750-doi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lysergic Acid Diethylamide (LSD)</title>
+      <link>http://cumol.org/notes/20210518184927-lysergic_acid_diethylamide_lsd/</link>
+      <pubDate>Sun, 17 Sep 2023 22:57:21 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20210518184927-lysergic_acid_diethylamide_lsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MDMA (3,4-Methylendioxy-N-methylamphetamin)</title>
+      <link>http://cumol.org/notes/20230323085540-mdma/</link>
+      <pubDate>Sun, 17 Sep 2023 22:52:46 +0200</pubDate>
+      
+      <guid>http://cumol.org/notes/20230323085540-mdma/</guid>
+      <description>Clinical Trials  MDMA-assisted Therapy for Severe PTSD: A Randomized, Double-Blind,  Placebo-Controlled Phase 3 Study (Mitchell et al. 2021)
+ 3,4-methylenedioxymethamphetamine (MDMA)-assisted psychotherapy for post-traumatic stress disorder in military veterans, firefighters, and police officers: a randomised, double-blind, dose-response, phase 2 clinical trial (Mithoefer et al. 2018)  </description>
+    </item>
+    
+  </channel>
+</rss>

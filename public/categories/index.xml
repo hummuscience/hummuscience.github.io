@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Opinionated Muad</title>
+    <link>http://cumol.org/categories/</link>
+    <description>Recent content in Categories on Opinionated Muad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jan 2025 19:55:12 +0100</lastBuildDate><atom:link href="http://cumol.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nerd</title>
+      <link>http://cumol.org/categories/nerd/</link>
+      <pubDate>Sun, 12 Jan 2025 19:55:12 +0100</pubDate>
+      
+      <guid>http://cumol.org/categories/nerd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psychedelics</title>
+      <link>http://cumol.org/categories/psychedelics/</link>
+      <pubDate>Sun, 17 Sep 2023 23:02:57 +0200</pubDate>
+      
+      <guid>http://cumol.org/categories/psychedelics/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

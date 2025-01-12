@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Opinionated Muad</title>
+    <link>http://cumol.org/blog/</link>
+    <description>Recent content in Blogs on Opinionated Muad</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Jan 2025 19:55:12 +0100</lastBuildDate><atom:link href="http://cumol.org/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog2</title>
+      <link>http://cumol.org/blog/20230917222031-blog2/</link>
+      <pubDate>Sun, 12 Jan 2025 19:55:12 +0100</pubDate>
+      
+      <guid>http://cumol.org/blog/20230917222031-blog2/</guid>
+      <description>This is a test for a blog post
+
+plot(mtcars)  Now I am testing some α and β as well as some (Nardou et al. 2023)
+References .csl-entry{text-indent: -1.5em; margin-left: 1.5em;}Nardou, Romain, Edward Sawyer, Young Jun Song, Makenzie Wilkinson, Yasmin Padovan-Hernandez, Júnia Lara de Deus, Noelle Wright, et al. 2023. “Psychedelics Reopen the Social Reward Learning Critical Period.” Nature, June, 1–9. https://doi.org/10.1038/s41586-023-06204-3.  </description>
+    </item>
+    
+  </channel>
+</rss>
