@@ -1,5 +1,6 @@
 +++
 title = "Simulating dipping MDMA"
+description = "Pharmacokinetic simulations of oral MDMA dosing strategies, benchmarked against published plasma-concentration data."
 author = ["muad abd el hay"]
 lastmod = 2025-01-12T19:45:22+01:00
 draft = true
