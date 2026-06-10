@@ -266,12 +266,12 @@ class BacklinksSystem {
             .backlink-context {
                 margin: 0;
                 font-size: 0.8em;
-                color: var(--muted-color, #8a8378);
+                color: var(--text-muted, #8a8378);
                 line-height: 1.3;
             }
 
             .dark .backlink-context {
-                color: var(--border, #ece7de);
+                color: var(--text-muted, #9a9284);
             }
 
             /* Hide on mobile */

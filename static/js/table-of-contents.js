@@ -231,7 +231,7 @@ class TableOfContents {
             }
 
             .dark .toc-toggle {
-                color: var(--border, #ece7de);
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .toc-toggle:hover {
@@ -240,7 +240,7 @@ class TableOfContents {
             }
 
             .dark .toc-link {
-                color: var(--border, #ece7de);
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .toc-link:hover {

@@ -236,7 +236,7 @@ class NotesSearch {
             }
 
             .dark .search-result-excerpt {
-                color: var(--border, #ece7de);
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .search-result-url {
@@ -244,7 +244,7 @@ class NotesSearch {
             }
 
             .dark .no-results {
-                color: var(--border, #ece7de);
+                color: var(--text-muted, #9a9284);
             }
 
             /* Mobile responsiveness */
