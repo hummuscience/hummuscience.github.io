@@ -42,6 +42,10 @@ publications:
     journal: Preprint
     citation: "@misc{abdelhay2026,\ntitle = {Animal Models in Psychedelic Research - Lost in Translation?},\nauthor = {Abd El Hay, Muad Y. and Cukić, Ana and Schölvinck, Marieke L. and Havenith, Martha N.},\nyear = {2026}\n}"
     pdf: "https://orcid.org/0000-0002-5082-1216"
+    links:
+      -
+        name: Interactive Dashboard
+        url: "https://hummuscience.github.io/psychedelic-behavioral-review/"
     description: A critical review of how well rodent models capture the subjective and therapeutic dimensions of psychedelics, and what aspects of psychedelic states are — and are not — accessible in animal research.
   - 
     authors:
