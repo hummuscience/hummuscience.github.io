@@ -6,7 +6,9 @@ title = "Muad Abd El Hay"
 theme = ["osm"]
 
 rssLimit = 10
-paginate = 10
+
+[pagination]
+    pagerSize = 10
 
 # Code highlighting
 pygmentsCodefences = true
