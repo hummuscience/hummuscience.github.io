@@ -269,8 +269,6 @@ class TableOfContents {
                 }
             }
 
-            /* Main content margins are handled by centered-layout.css */
-
             /* Smooth scrolling for anchor links */
             html {
                 scroll-behavior: smooth;
@@ -415,7 +413,7 @@ class TableOfContents {
     }
 
     adjustContentMargin() {
-        // Content margin adjustment is now handled by centered-layout.css
+        // Content margin adjustment is handled by site.css via body classes
         // This method is kept for compatibility but does nothing
     }
 }

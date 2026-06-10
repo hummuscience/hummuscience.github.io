@@ -105,7 +105,7 @@ class NotesSearch {
         style.textContent = `
             .notes-search-container {
                 position: fixed;
-                top: 20px;
+                top: 90px;
                 right: 20px;
                 width: 350px;
                 z-index: 1000;
@@ -120,7 +120,7 @@ class NotesSearch {
             #notes-search-input {
                 width: 100%;
                 padding: 12px 16px 12px 40px;
-                border: 2px solid #e2e8f0;
+                border: 2px solid var(--border, #ece7de);
                 border-radius: 8px;
                 font-size: 14px;
                 background: white;
@@ -131,8 +131,8 @@ class NotesSearch {
 
             #notes-search-input:focus {
                 outline: none;
-                border-color: #3b82f6;
-                box-shadow: 0 2px 12px rgba(59, 130, 246, 0.2);
+                border-color: var(--accent, #b08d57);
+                box-shadow: 0 2px 12px rgba(176, 141, 87, 0.25);
             }
 
             .search-icon {
@@ -140,13 +140,13 @@ class NotesSearch {
                 left: 12px;
                 top: 50%;
                 transform: translateY(-50%);
-                color: #6b7280;
+                color: var(--text-muted, #8a8378);
                 pointer-events: none;
             }
 
             .search-results {
                 background: white;
-                border: 1px solid #e2e8f0;
+                border: 1px solid var(--border, #ece7de);
                 border-radius: 8px;
                 box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
                 max-height: 400px;
@@ -159,7 +159,7 @@ class NotesSearch {
 
             .search-result-item {
                 padding: 12px 16px;
-                border-bottom: 1px solid #f1f5f9;
+                border-bottom: 1px solid var(--border, #ece7de);
                 cursor: pointer;
                 transition: background-color 0.2s ease;
             }
@@ -169,28 +169,28 @@ class NotesSearch {
             }
 
             .search-result-item:hover {
-                background-color: #f8fafc;
+                background-color: var(--bg, #fdfbf7);
             }
 
             .search-result-item.highlighted {
-                background-color: #eff6ff;
+                background-color: var(--thumb-bg, #e8e2d8);
             }
 
             .search-result-title {
                 font-weight: 600;
-                color: #1f2937;
+                color: var(--text, #1a1a1a);
                 margin-bottom: 4px;
                 font-size: 14px;
             }
 
             .search-result-excerpt {
-                color: #6b7280;
+                color: var(--text-muted, #8a8378);
                 font-size: 12px;
                 line-height: 1.4;
             }
 
             .search-result-url {
-                color: #3b82f6;
+                color: var(--accent, #b08d57);
                 font-size: 11px;
                 margin-top: 4px;
             }
@@ -198,53 +198,53 @@ class NotesSearch {
             .no-results {
                 padding: 16px;
                 text-align: center;
-                color: #6b7280;
+                color: var(--text-muted, #8a8378);
                 font-style: italic;
                 font-size: 14px;
             }
 
             /* Dark mode support */
             .dark .notes-search-container #notes-search-input {
-                background: #374151;
-                border-color: #4b5563;
-                color: #f3f4f6;
+                background: var(--bg-card, #1f1c15);
+                border-color: var(--border, #2c2820);
+                color: var(--text, #e8e4dc);
             }
 
             .dark .notes-search-container #notes-search-input:focus {
-                border-color: #60a5fa;
+                border-color: var(--accent, #c9a36a);
             }
 
             .dark .search-results {
-                background: #374151;
-                border-color: #4b5563;
+                background: var(--bg-card, #1f1c15);
+                border-color: var(--border, #2c2820);
             }
 
             .dark .search-result-item {
-                border-color: #4b5563;
+                border-color: var(--border, #2c2820);
             }
 
             .dark .search-result-item:hover {
-                background-color: #4b5563;
+                background-color: var(--border, #2c2820);
             }
 
             .dark .search-result-item.highlighted {
-                background-color: #1e3a8a;
+                background-color: var(--bg-card, #1f1c15);
             }
 
             .dark .search-result-title {
-                color: #f3f4f6;
+                color: var(--accent, #c9a36a);
             }
 
             .dark .search-result-excerpt {
-                color: #d1d5db;
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .search-result-url {
-                color: #93c5fd;
+                color: var(--accent, #c9a36a);
             }
 
             .dark .no-results {
-                color: #d1d5db;
+                color: var(--text-muted, #9a9284);
             }
 
             /* Mobile responsiveness */
@@ -384,7 +384,7 @@ class NotesSearch {
         
         queryWords.forEach(word => {
             const regex = new RegExp(`(${word})`, 'gi');
-            highlightedText = highlightedText.replace(regex, '<mark style="background: #fef08a; padding: 0;">$1</mark>');
+            highlightedText = highlightedText.replace(regex, '<mark style="background: var(--thumb-bg, #e8e2d8); padding: 0;">$1</mark>');
         });
         
         return highlightedText;

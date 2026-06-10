@@ -202,7 +202,7 @@ class BacklinksSystem {
                 max-height: 60vh;
                 overflow-y: auto;
                 background: var(--bg-color, #ffffff);
-                border: 1px solid var(--border-color, #e2e8f0);
+                border: 1px solid var(--border-color, #ece7de);
                 border-radius: 8px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
@@ -210,8 +210,8 @@ class BacklinksSystem {
             }
 
             .dark .backlinks-sidebar {
-                background: #374151;
-                border-color: #4b5563;
+                background: var(--bg-card, #1f1c15);
+                border-color: var(--border, #2c2820);
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             }
 
@@ -223,14 +223,14 @@ class BacklinksSystem {
                 margin: 0 0 12px 0;
                 font-size: 1.1em;
                 font-weight: 600;
-                color: var(--text-color, #1f2937);
-                border-bottom: 1px solid var(--border-color, #e2e8f0);
+                color: var(--text-color, #1a1a1a);
+                border-bottom: 1px solid var(--border-color, #ece7de);
                 padding-bottom: 8px;
             }
 
             .dark .backlinks-title {
-                color: #f3f4f6;
-                border-color: #4b5563;
+                color: var(--text, #e8e4dc);
+                border-color: var(--border, #2c2820);
             }
 
             .backlinks-list {
@@ -242,18 +242,18 @@ class BacklinksSystem {
             .backlink-item {
                 padding: 8px;
                 border-radius: 4px;
-                background: var(--item-bg, #f8fafc);
-                border-left: 3px solid #3b82f6;
+                background: var(--item-bg, #fdfbf7);
+                border-left: 3px solid var(--accent, #b08d57);
             }
 
             .dark .backlink-item {
-                background: #4b5563;
+                background: var(--border, #2c2820);
             }
 
             .backlink-title {
                 display: block;
                 font-weight: 500;
-                color: #3b82f6;
+                color: var(--accent, #b08d57);
                 text-decoration: none;
                 margin-bottom: 4px;
                 font-size: 0.9em;
@@ -266,12 +266,12 @@ class BacklinksSystem {
             .backlink-context {
                 margin: 0;
                 font-size: 0.8em;
-                color: var(--muted-color, #6b7280);
+                color: var(--text-muted, #8a8378);
                 line-height: 1.3;
             }
 
             .dark .backlink-context {
-                color: #d1d5db;
+                color: var(--text-muted, #9a9284);
             }
 
             /* Hide on mobile */

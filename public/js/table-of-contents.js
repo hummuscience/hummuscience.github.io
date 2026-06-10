@@ -121,7 +121,7 @@ class TableOfContents {
                 width: 280px;
                 max-height: 70vh;
                 background: white;
-                border: 1px solid #e2e8f0;
+                border: 1px solid var(--border, #ece7de);
                 border-radius: 8px;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 z-index: 1000;
@@ -139,15 +139,15 @@ class TableOfContents {
                 justify-content: space-between;
                 align-items: center;
                 padding: 12px 16px;
-                border-bottom: 1px solid #e2e8f0;
-                background: #f8fafc;
+                border-bottom: 1px solid var(--border, #ece7de);
+                background: var(--bg, #fdfbf7);
             }
 
             .toc-header h3 {
                 margin: 0;
                 font-size: 14px;
                 font-weight: 600;
-                color: #374151;
+                color: var(--text, #1a1a1a);
             }
 
             .toc-toggle {
@@ -156,13 +156,13 @@ class TableOfContents {
                 cursor: pointer;
                 padding: 4px;
                 border-radius: 4px;
-                color: #6b7280;
+                color: var(--text-muted, #8a8378);
                 transition: all 0.2s ease;
             }
 
             .toc-toggle:hover {
-                background: #e5e7eb;
-                color: #374151;
+                background: var(--border, #ece7de);
+                color: var(--text, #1a1a1a);
             }
 
             .toc-nav {
@@ -185,7 +185,7 @@ class TableOfContents {
             .toc-link {
                 display: block;
                 padding: 6px 16px;
-                color: #6b7280;
+                color: var(--text-muted, #8a8378);
                 text-decoration: none;
                 font-size: 13px;
                 line-height: 1.4;
@@ -194,15 +194,15 @@ class TableOfContents {
             }
 
             .toc-link:hover {
-                color: #374151;
-                background: #f1f5f9;
-                border-left-color: #cbd5e1;
+                color: var(--text, #1a1a1a);
+                background: var(--thumb-bg, #e8e2d8);
+                border-left-color: var(--border, #ece7de);
             }
 
             .toc-link.toc-active {
-                color: #3b82f6;
-                background: #eff6ff;
-                border-left-color: #3b82f6;
+                color: var(--accent, #b08d57);
+                background: var(--thumb-bg, #e8e2d8);
+                border-left-color: var(--accent, #b08d57);
                 font-weight: 500;
             }
 
@@ -216,43 +216,43 @@ class TableOfContents {
 
             /* Dark mode support */
             .dark .table-of-contents {
-                background: #374151;
-                border-color: #4b5563;
+                background: var(--bg-card, #1f1c15);
+                border-color: var(--border, #2c2820);
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             }
 
             .dark .toc-header {
-                background: #4b5563;
-                border-color: #6b7280;
+                background: var(--border, #2c2820);
+                border-color: var(--text-muted, #8a8378);
             }
 
             .dark .toc-header h3 {
-                color: #f3f4f6;
+                color: var(--text, #e8e4dc);
             }
 
             .dark .toc-toggle {
-                color: #d1d5db;
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .toc-toggle:hover {
-                background: #6b7280;
-                color: #f3f4f6;
+                background: var(--text-muted, #8a8378);
+                color: var(--text, #e8e4dc);
             }
 
             .dark .toc-link {
-                color: #d1d5db;
+                color: var(--text-muted, #9a9284);
             }
 
             .dark .toc-link:hover {
-                color: #f3f4f6;
-                background: #4b5563;
-                border-left-color: #6b7280;
+                color: var(--text, #e8e4dc);
+                background: var(--border, #2c2820);
+                border-left-color: var(--text-muted, #8a8378);
             }
 
             .dark .toc-link.toc-active {
-                color: #60a5fa;
-                background: #1e3a8a;
-                border-left-color: #60a5fa;
+                color: var(--accent, #c9a36a);
+                background: var(--bg-card, #1f1c15);
+                border-left-color: var(--accent, #c9a36a);
             }
 
             /* Responsive design */
@@ -269,8 +269,6 @@ class TableOfContents {
                 }
             }
 
-            /* Main content margins are handled by centered-layout.css */
-
             /* Smooth scrolling for anchor links */
             html {
                 scroll-behavior: smooth;
@@ -282,7 +280,7 @@ class TableOfContents {
             }
 
             @keyframes highlight-heading {
-                0% { background-color: #fef08a; }
+                0% { background-color: var(--thumb-bg, #e8e2d8); }
                 100% { background-color: transparent; }
             }
 
@@ -291,7 +289,7 @@ class TableOfContents {
             }
 
             @keyframes highlight-heading-dark {
-                0% { background-color: #854d0e; }
+                0% { background-color: var(--accent, #b08d57); }
                 100% { background-color: transparent; }
             }
         `;
@@ -415,7 +413,7 @@ class TableOfContents {
     }
 
     adjustContentMargin() {
-        // Content margin adjustment is now handled by centered-layout.css
+        // Content margin adjustment is handled by site.css via body classes
         // This method is kept for compatibility but does nothing
     }
 }

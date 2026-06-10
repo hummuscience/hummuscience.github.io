@@ -1,0 +1,10 @@
+# Brainstorm/agent artifacts
+.superpowers/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# Tooling artifacts
+.playwright-mcp/

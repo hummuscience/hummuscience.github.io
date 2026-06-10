@@ -17,14 +17,10 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/lora-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<link rel="stylesheet" href="http://cumol.org/css/style.min.css">
-
-<link rel="stylesheet" href="/css/centered-layout.css">
+<link rel="stylesheet" href="/css/site.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -32,7 +28,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link href="http://cumol.org/index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
-<meta name="theme-color" content="#faf9f7">
+<meta name="theme-color" content="#fdfbf7">
 
 <script>
 (function(){
@@ -64,445 +60,101 @@
 
   </head>
   <body>
-    <header class="md:px-0 px-2">
-        <nav >
-  <div class="container flex flex-wrap justify-between items-center mx-auto">
-    <div class="nav-main my-2.5">
-      <a href="http://cumol.org/" class="nav-title py-2.5 text-2xl
-               text-zinc-600 dark:text-zinc-300 hover:border-b-0">Opinionated Muad</a>
-    </div>
-    <button type="button"
-            onclick="toggleMenu()"
-            class="inline-flex items-center p-2 ml-3
-                  text-sm text-gray-500
-                  rounded-lg md:hidden hover:bg-gray-100
-                  focus:outline-none focus:ring-2
-                  focus:ring-gray-200 dark:text-gray-400
-                  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor"
-             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1
-                           0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
-                           01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
-                           01-1-1z" clip-rule="evenodd"></path>
-        </svg>
+    <header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="http://cumol.org/">Opinionated Muad</a>
+    <button type="button" class="nav-toggle" onclick="toggleMenu()"
+            aria-controls="navbar-default" aria-expanded="false" aria-label="Open main menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
     </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-      <ul class="grid md:grid-flow-col items-center justify-between text-lg
-                 my-2.5 grid-cols-1 pl-0 text-center">
+    <nav id="navbar-default" class="hidden">
+      <ul>
         
-        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
-          <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/blog/">Blog</a>
-        </li>
+        <li><a href="/blog/">Blog</a></li>
         
-        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
-          <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/notes/">Notes</a>
-        </li>
+        <li><a href="/notes/">Notes</a></li>
         
-        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
-          <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/categories/">Categories</a>
-        </li>
+        <li><a href="/about/">About</a></li>
         
-        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
-          <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/tags/">Tags</a>
-        </li>
-        
-        <li class="h-7 pl-2.5 pr-0 list-none">
-          <button type="button" onclick="toggleMode()" class="h-full"  aria-label="Toggle between dark and light mode">
-            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 hidden dark:inline"
-                 id="ligh-mode-button-img"
-                 alt="A sun icon for switching to light mode"
-                 src="http://cumol.org/img/light_mode.svg">
-            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 inline dark:hidden"
-                 id="dark-mode-button-img"
-                 alt="A moon icon for switching to dark mode"
-                 src="http://cumol.org/img/dark_mode.svg">
+        <li>
+          <button type="button" onclick="toggleMode()" class="theme-toggle"
+                  aria-label="Toggle between dark and light mode">
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                 stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
           </button>
         </li>
       </ul>
-    </div>
+    </nav>
   </div>
-</nav>
+</header>
 
+    <main role="main">
+      
+<section class="hero h-card">
+  
+  <img class="hero-avatar u-photo" src="/img/main.jpg" alt="Picture of me">
+  
+  <div>
+    <h1 class="hero-name p-name">Mua&#39;ath</h1>
+    <p class="hero-title">Neuroscientist</p>
+  </div>
+</section>
 
-    </header>
-    <main class="content h-card container mt-2 m-auto
-                 leading-loose md:px-0 px-2 z-0"
-          role="main">
-    
-<div class="homepage-hero">
-    <div class="hero-photo">
-        <picture>
-            
-            <source srcset="img/main.jpg"
-                     type="image/jpeg">
-            <img class="hero-avatar u-photo"
-                 itemprop="contentUrl" alt="Picture of me"
-                 src="img/main.jpg">
-        </picture>
-    </div>
-    <div class="hero-text" itemscope itemtype="http://schema.org/Person">
-        <h1 class="hero-name p-name" itemprop="name">Mua&#39;ath</h1>
-        <p class="hero-title" itemprop="jobTitle">Neuroscientist</p>
-        <div class="hero-bio e-note">
-            <p>By day I&rsquo;m a neuroscientist studying how the brain processes psychedelics and drives animal behavior. On weekends you might find me at a rave giving a harm-reduction talk.</p>
+<div class="hero-bio">
+  <p>By day I&rsquo;m a neuroscientist studying how the brain processes psychedelics and drives animal behavior. On weekends you might find me at a rave giving a harm-reduction talk.</p>
 <p>This is my corner of the internet — part research log, part food journal, part whatever I find interesting. Think of it as my alternative to social media: a place to share ideas without platform restrictions.</p>
 
-        </div>
-    </div>
 </div>
 
 
-    <h2 id="publications">Publications</h2>
-
-
-    <div class="pub-wrapper w-full inline-flex flex-wrap items-center
-            my-1.5 p-2.5 rounded bg-slate-200 dark:bg-slate-700 box-border
-            leading-tight justify-around" id="central-infusion-of-prostaglandin-e2-reveals-a-unified-representation-of-sickness-in-the-mouse-insular-cortex"
-     itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <div class="pub-image basis-40 grow-0 shrink" itemprop="image"
-
-         itemscope itemtype="http://schema.org/ImageObject">
-        <img alt="Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex paper illustration"
-             itemprop="url" src="img/kamm2025.png"
-             class="w-full"/>
+<h2 class="section-heading" id="publications">Publications</h2>
+<div class="publications">
+  
+  <article class="pub-card" id="central-infusion-of-prostaglandin-e2-reveals-a-unified-representation-of-sickness-in-the-mouse-insular-cortex"
+           itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <div class="pub-thumb">
+      <img src="/img/kamm2025.png" alt="Figure from: Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex" loading="lazy" itemprop="image">
     </div>
-    <div class="publication grow shrink-2 basis-3/4 my-1.5 mx-2">
-        
-        
-            <span itemprop="author">Kamm, G. B.</span>,
-        
-        
-            <span itemprop="author">Boffi, J. C.</span>,
-        
-        
-        <b>
-        
-            <span itemprop="author">Abd El Hay, M. Y.</span>,
-        </b>
-        
-        
-        
-            <span itemprop="author">Rajot, D.</span>
-        
-        
-            <span itemprop="author">Cukić, A.</span>
-        
-        
-            <span itemprop="author">Havenith, M. N.</span>
-        
-        
-            <span itemprop="author">Scholvinck, M.</span>
-        
-        
-            <span itemprop="author">Renier, N.</span>
-        
-        
-            <span itemprop="author">Asari, H.</span>
-        
-        
-            <span itemprop="author">Prevedel, R.</span>
-        
-        <br>
-        <b>
-            <a href="https://doi.org/10.1101/2025.04.28.651028">
-                <span itemprop="name">Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex</span>
-            </a>
-        </b>
-        <meta itemprop="headline" content="Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex"/>
-        <br>
-        
-        <div>
-        In <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-            <i itemprop="name">bioRxiv</i></span>,
-        
-        <meta itemprop="datePublished" content="2025">2025.
-        </div><div itemprop="description" class="pub-description text-sm my-1.5">This study examines how the brain encodes sickness by injecting prostaglandin E2 into awake mice and recording neural activity. Using whole-brain mapping and electrophysiology, we found that the insular cortex preferentially encodes an integrated measure of sickness rather than individual symptoms, suggesting it serves as a unified representation of the sick state in the neocortex.</div><div class="pub-link-wrapper mt-3 text-sm"><span class="publication-link cursor-pointer
-                         bg-sky-600 dark:bg-sky-700
-                         hover:bg-sky-800
-                         dark:hover:bg-sky-500
-                         text-white
-                         dark:text-zinc-200
-                         dark:hover:text-gray-800
-                         hover:text-gray-900
-                         rounded-sm p-1 mr-1">
-                <button class="open-modal text-inherit"
-                        data-target="#open-modal-central-infusion-of-prostaglandin-e2-reveals-a-unified-representation-of-sickness-in-the-mouse-insular-cortex">Cite</button></span><span class="publication-link bg-sky-600
-                         dark:bg-sky-700 rounded-sm p-1
-                         dark:hover:bg-sky-500
-                         hover:bg-sky-800 mr-1"><a class="border-none
-                         text-white
-                         dark:text-zinc-200
-                         hover:text-gray-900
-                          hover:dark:text-gray-800"
-                   itemprop="mainEntityOfPage" href="https://doi.org/10.1101/2025.04.28.651028">bioRxiv Preprint</a></span></div>
-    </div>
-</div>
-
-
-    <div class="pub-wrapper w-full inline-flex flex-wrap items-center
-            my-1.5 p-2.5 rounded bg-slate-200 dark:bg-slate-700 box-border
-            leading-tight justify-around" id="inferring-internal-states-across-mice-and-monkeys-using-facial-features"
-     itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <div class="pub-image basis-40 grow-0 shrink" itemprop="image"
-
-         itemscope itemtype="http://schema.org/ImageObject">
-        <img alt="Inferring Internal States across Mice and Monkeys Using Facial Features paper illustration"
-             itemprop="url" src="img/tlaie2025.png"
-             class="w-full"/>
-    </div>
-    <div class="publication grow shrink-2 basis-3/4 my-1.5 mx-2">
-        
-        
-            <span itemprop="author">Tlaie, A.</span>,
-        
-        
-        <b>
-        
-            <span itemprop="author">Abd El Hay, M. Y.</span>,
-        </b>
-        
-        
-        
-            <span itemprop="author">Mert, B.</span>
-        
-        
-            <span itemprop="author">Taylor, R.</span>
-        
-        
-            <span itemprop="author">Ferracci, P.-A.</span>
-        
-        
-            <span itemprop="author">Shapcott, K.</span>
-        
-        
-            <span itemprop="author">Glukhova, M.</span>
-        
-        
-            <span itemprop="author">Pillow, J. W.</span>
-        
-        
-            <span itemprop="author">Havenith, M. N.</span>
-        
-        
-            <span itemprop="author">Schölvinck, M. L.</span>
-        
-        <br>
-        <b>
-            <a href="https://doi.org/10.1038/s41467-025-60296-1">
-                <span itemprop="name">Inferring Internal States across Mice and Monkeys Using Facial Features</span>
-            </a>
-        </b>
-        <meta itemprop="headline" content="Inferring Internal States across Mice and Monkeys Using Facial Features"/>
-        <br>
-        
-        <div>
-        In <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-            <i itemprop="name">Nature Communications</i></span>,
-        
-        <meta itemprop="datePublished" content="2025">2025.
-        </div><div itemprop="description" class="pub-description text-sm my-1.5">This study develops a virtual reality setup where mice and macaques perform the same visual foraging task, using facial features to identify internal cognitive states that predict behavioral responses. The research shows that similar internal states exist across species and can be inferred from facial expressions, highlighting the cross-species importance of facial features in manifesting cognitive states.</div><div class="pub-link-wrapper mt-3 text-sm"><span class="publication-link cursor-pointer
-                         bg-sky-600 dark:bg-sky-700
-                         hover:bg-sky-800
-                         dark:hover:bg-sky-500
-                         text-white
-                         dark:text-zinc-200
-                         dark:hover:text-gray-800
-                         hover:text-gray-900
-                         rounded-sm p-1 mr-1">
-                <button class="open-modal text-inherit"
-                        data-target="#open-modal-inferring-internal-states-across-mice-and-monkeys-using-facial-features">Cite</button></span><span class="publication-link bg-sky-600
-                         dark:bg-sky-700 rounded-sm p-1
-                         dark:hover:bg-sky-500
-                         hover:bg-sky-800 mr-1"><a class="border-none
-                         text-white
-                         dark:text-zinc-200
-                         hover:text-gray-900
-                          hover:dark:text-gray-800"
-                   itemprop="mainEntityOfPage" href="https://doi.org/10.1038/s41467-025-60296-1">Main URL</a></span></div>
-    </div>
-</div>
-
-
-    <div class="pub-wrapper w-full inline-flex flex-wrap items-center
-            my-1.5 p-2.5 rounded bg-slate-200 dark:bg-slate-700 box-border
-            leading-tight justify-around" id="diverging-roles-of-trpv1-and-trpm2-in-warm-temperature-detection"
-     itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <div class="pub-image basis-40 grow-0 shrink" itemprop="image"
-
-         itemscope itemtype="http://schema.org/ImageObject">
-        <img alt="Diverging roles of TRPV1 and TRPM2 in warm-temperature detection paper illustration"
-             itemprop="url" src="img/abdelhay2025.png"
-             class="w-full"/>
-    </div>
-    <div class="publication grow shrink-2 basis-3/4 my-1.5 mx-2">
-        
-        
-        <b>
-        
-            <span itemprop="author">Abd El Hay, M. Y.</span>,
-        </b>
-        
-        
-        
-            <span itemprop="author">Kamm, G. B.</span>,
-        
-        
-            <span itemprop="author">Tlaie, A.</span>
-        
-        
-            <span itemprop="author">Siemens, J.</span>
-        
-        <br>
-        <b>
-            <a href="https://doi.org/10.7554/eLife.95618.2">
-                <span itemprop="name">Diverging roles of TRPV1 and TRPM2 in warm-temperature detection</span>
-            </a>
-        </b>
-        <meta itemprop="headline" content="Diverging roles of TRPV1 and TRPM2 in warm-temperature detection"/>
-        <br>
-        
-        <div>
-        In <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-            <i itemprop="name">eLife</i></span>,
-        
-        <meta itemprop="datePublished" content="2025">2025.
-        </div><div itemprop="description" class="pub-description text-sm my-1.5">This study investigates how we sense warmth through specialized neurons. By examining over 20,000 mouse sensory neurons, we found that two ion channels (TRPV1 and TRPM2) play distinct roles in temperature detection. TRPV1 helps with quick warm sensing, while TRPM2 influences how many neurons respond to warmth. These findings help explain how animals make decisions about temperature preferences and maintain thermal comfort.</div><div class="pub-link-wrapper mt-3 text-sm"><span class="publication-link cursor-pointer
-                         bg-sky-600 dark:bg-sky-700
-                         hover:bg-sky-800
-                         dark:hover:bg-sky-500
-                         text-white
-                         dark:text-zinc-200
-                         dark:hover:text-gray-800
-                         hover:text-gray-900
-                         rounded-sm p-1 mr-1">
-                <button class="open-modal text-inherit"
-                        data-target="#open-modal-diverging-roles-of-trpv1-and-trpm2-in-warm-temperature-detection">Cite</button></span><span class="publication-link bg-sky-600
-                         dark:bg-sky-700 rounded-sm p-1
-                         dark:hover:bg-sky-500
-                         hover:bg-sky-800 mr-1"><a class="border-none
-                         text-white
-                         dark:text-zinc-200
-                         hover:text-gray-900
-                          hover:dark:text-gray-800"
-                   itemprop="mainEntityOfPage" href="https://doi.org/10.7554/eLife.95618.2">Main URL</a></span></div>
-    </div>
-</div>
-
-
-    <div class="pub-wrapper w-full inline-flex flex-wrap items-center
-            my-1.5 p-2.5 rounded bg-slate-200 dark:bg-slate-700 box-border
-            leading-tight justify-around" id="the-dream-implant-a-lightweight-modular-and-cost-effective-implant-system-for-chronic-electrophysiology-in-head-fixed-and-freely-behaving-mice"
-     itemscope itemtype="http://schema.org/ScholarlyArticle">
-    <div class="pub-image basis-40 grow-0 shrink" itemprop="image"
-
-         itemscope itemtype="http://schema.org/ImageObject">
-        <img alt="The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice paper illustration"
-             itemprop="url" src="img/schroeder2024.jpg"
-             class="w-full"/>
-    </div>
-    <div class="publication grow shrink-2 basis-3/4 my-1.5 mx-2">
-        
-        
-            <span itemprop="author">Schroeder, T.</span>,
-        
-        
-            <span itemprop="author">Taylor, R.</span>,
-        
-        
-        <b>
-        
-            <span itemprop="author">Abd El Hay, M.</span>,
-        </b>
-        
-        
-        
-            <span itemprop="author">Nemri, A.</span>
-        
-        
-            <span itemprop="author">França, A.</span>
-        
-        
-            <span itemprop="author">Battaglia, F.</span>
-        
-        
-            <span itemprop="author">Tiesinga, P.</span>
-        
-        
-            <span itemprop="author">Schölvinck, M. L.</span>
-        
-        
-            <span itemprop="author">Havenith, M. N.</span>
-        
-        <br>
-        <b>
-            <a href="https://doi.org/10.3791/66867">
-                <span itemprop="name">The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice</span>
-            </a>
-        </b>
-        <meta itemprop="headline" content="The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice"/>
-        <br>
-        
-        <div>
-        In <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-            <i itemprop="name">JoVE (Journal of Visualized Experiments)</i></span>,
-        
-        <meta itemprop="datePublished" content="2024">2024.
-        </div><div itemprop="description" class="pub-description text-sm my-1.5">This protocol introduces the DREAM (Dynamic, Recoverable, Economical, Adaptable, and Modular) implant system for chronic electrophysiology in mice. The system provides a lightweight, cost-effective solution with standardized hardware that can be implanted easily and explanted safely for probe reuse, significantly reducing experimental costs while maintaining high-quality recordings.</div><div class="pub-link-wrapper mt-3 text-sm"><span class="publication-link cursor-pointer
-                         bg-sky-600 dark:bg-sky-700
-                         hover:bg-sky-800
-                         dark:hover:bg-sky-500
-                         text-white
-                         dark:text-zinc-200
-                         dark:hover:text-gray-800
-                         hover:text-gray-900
-                         rounded-sm p-1 mr-1">
-                <button class="open-modal text-inherit"
-                        data-target="#open-modal-the-dream-implant-a-lightweight-modular-and-cost-effective-implant-system-for-chronic-electrophysiology-in-head-fixed-and-freely-behaving-mice">Cite</button></span><span class="publication-link bg-sky-600
-                         dark:bg-sky-700 rounded-sm p-1
-                         dark:hover:bg-sky-500
-                         hover:bg-sky-800 mr-1"><a class="border-none
-                         text-white
-                         dark:text-zinc-200
-                         hover:text-gray-900
-                          hover:dark:text-gray-800"
-                   itemprop="mainEntityOfPage" href="https://doi.org/10.3791/66867">JoVE Article</a></span></div>
-    </div>
-</div>
-
-
-
-    
-<div id="#open-modal-central-infusion-of-prostaglandin-e2-reveals-a-unified-representation-of-sickness-in-the-mouse-insular-cortex"
-     class="modal-window bg-tp-black invisible fixed top-0 left-0
-            right-0 bottom-0 transition-all pointer-events-none z-50">
-    <div class="absolute top-1/2 left-1/2 p-8 bg-white
-                dark:bg-neutral-700
-
-                max-w-full
-                rounded-md max-w-4/5 -translate-x-1/2 -translate-y-1/2">
-        <button id="#close-modal-central-infusion-of-prostaglandin-e2-reveals-a-unified-representation-of-sickness-in-the-mouse-insular-cortex" title="Close" class="modal-close rounded-sm p-2">✕</button>
-        <h3>Cite <i>Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex</i></h3>
-        <button class="modal-copy-citation pr-2 pl-1 my-2 ml-2
-                       bg-sky-600 dark:bg-sky-700 rounded-sm
-                       text-white
-                       dark:text-zinc-200
-                       dark:hover:text-gray-800
-                       hover:text-gray-900
-                       hover:bg-sky-800
-                       disabled:bg-neutral-500
-                       hover:disabled:text-white
-                       dark:hover:disabled:text-zinc-200
-                       dark:disabled:bg-neutral-500
-                       dark:hover:bg-sky-500" id="#copy-6eceabb8">Copy to clipboard</button>
-        <pre class="bg-slate-100 dark:bg-slate-800"><code id="6eceabb8">@misc{kamm2025a,
+    <div class="pub-body">
+      <h3 class="pub-title">
+        <a href="https://doi.org/10.1101/2025.04.28.651028" itemprop="name">Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex</a>
+      </h3>
+      <p class="pub-meta">
+        <span itemprop="author">Kamm, G. B.</span>, <span itemprop="author">Boffi, J. C.</span>, <strong class="pub-me" itemprop="author">Abd El Hay, M. Y.</strong>, <span itemprop="author">Rajot, D.</span>, <span itemprop="author">Cukić, A.</span>, <span itemprop="author">Havenith, M. N.</span>, <span itemprop="author">Scholvinck, M.</span>, <span itemprop="author">Renier, N.</span>, <span itemprop="author">Asari, H.</span>, <span itemprop="author">Prevedel, R.</span>
+         · <em itemprop="publisher">bioRxiv</em>
+        · <span itemprop="datePublished">2025</span>
+      </p>
+      
+      <p class="pub-description" itemprop="description">This study examines how the brain encodes sickness by injecting prostaglandin E2 into awake mice and recording neural activity. Using whole-brain mapping and electrophysiology, we found that the insular cortex preferentially encodes an integrated measure of sickness rather than individual symptoms, suggesting it serves as a unified representation of the sick state in the neocortex.</p>
+      
+      <div class="pub-links">
+        <a href="https://doi.org/10.1101/2025.04.28.651028">PDF</a>
+        <a href="https://doi.org/10.1101/2025.04.28.651028" itemprop="mainEntityOfPage">bioRxiv Preprint</a>
+        
+        <details class="pub-cite">
+          <summary>Cite</summary>
+          <pre><code>@misc{kamm2025a,
 title = {Central Infusion of Prostaglandin {{E2}} Reveals a Unified Representation of Sickness in the Mouse Insular Cortex},
 author = {Kamm, Gretel B. and Boffi, Juan C. and Hay, Muad Y. Abd El and Rajot, Domitille and Cuki{\&#39;c}, Ana and Havenith, Martha N. and Scholvinck, Marieke and Renier, Nicolas and Asari, Hiroki and Prevedel, Robert},
 year = {2025},
@@ -512,35 +164,36 @@ pages = {2025.04.28.651028},
 publisher = {bioRxiv},
 doi = {10.1101/2025.04.28.651028}
 }</code></pre>
+        </details>
+        
+      </div>
     </div>
-</div>
-
-
-
-    
-<div id="#open-modal-inferring-internal-states-across-mice-and-monkeys-using-facial-features"
-     class="modal-window bg-tp-black invisible fixed top-0 left-0
-            right-0 bottom-0 transition-all pointer-events-none z-50">
-    <div class="absolute top-1/2 left-1/2 p-8 bg-white
-                dark:bg-neutral-700
-
-                max-w-full
-                rounded-md max-w-4/5 -translate-x-1/2 -translate-y-1/2">
-        <button id="#close-modal-inferring-internal-states-across-mice-and-monkeys-using-facial-features" title="Close" class="modal-close rounded-sm p-2">✕</button>
-        <h3>Cite <i>Inferring Internal States across Mice and Monkeys Using Facial Features</i></h3>
-        <button class="modal-copy-citation pr-2 pl-1 my-2 ml-2
-                       bg-sky-600 dark:bg-sky-700 rounded-sm
-                       text-white
-                       dark:text-zinc-200
-                       dark:hover:text-gray-800
-                       hover:text-gray-900
-                       hover:bg-sky-800
-                       disabled:bg-neutral-500
-                       hover:disabled:text-white
-                       dark:hover:disabled:text-zinc-200
-                       dark:disabled:bg-neutral-500
-                       dark:hover:bg-sky-500" id="#copy-574a2f33">Copy to clipboard</button>
-        <pre class="bg-slate-100 dark:bg-slate-800"><code id="574a2f33">@article{tlaie2025,
+  </article>
+  
+  <article class="pub-card" id="inferring-internal-states-across-mice-and-monkeys-using-facial-features"
+           itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <div class="pub-thumb">
+      <img src="/img/tlaie2025.png" alt="Figure from: Inferring Internal States across Mice and Monkeys Using Facial Features" loading="lazy" itemprop="image">
+    </div>
+    <div class="pub-body">
+      <h3 class="pub-title">
+        <a href="https://doi.org/10.1038/s41467-025-60296-1" itemprop="name">Inferring Internal States across Mice and Monkeys Using Facial Features</a>
+      </h3>
+      <p class="pub-meta">
+        <span itemprop="author">Tlaie, A.</span>, <strong class="pub-me" itemprop="author">Abd El Hay, M. Y.</strong>, <span itemprop="author">Mert, B.</span>, <span itemprop="author">Taylor, R.</span>, <span itemprop="author">Ferracci, P.-A.</span>, <span itemprop="author">Shapcott, K.</span>, <span itemprop="author">Glukhova, M.</span>, <span itemprop="author">Pillow, J. W.</span>, <span itemprop="author">Havenith, M. N.</span>, <span itemprop="author">Schölvinck, M. L.</span>
+         · <em itemprop="publisher">Nature Communications</em>
+        · <span itemprop="datePublished">2025</span>
+      </p>
+      
+      <p class="pub-description" itemprop="description">This study develops a virtual reality setup where mice and macaques perform the same visual foraging task, using facial features to identify internal cognitive states that predict behavioral responses. The research shows that similar internal states exist across species and can be inferred from facial expressions, highlighting the cross-species importance of facial features in manifesting cognitive states.</p>
+      
+      <div class="pub-links">
+        <a href="https://doi.org/10.1038/s41467-025-60296-1">PDF</a>
+        <a href="https://doi.org/10.1038/s41467-025-60296-1" itemprop="mainEntityOfPage">Main URL</a>
+        
+        <details class="pub-cite">
+          <summary>Cite</summary>
+          <pre><code>@article{tlaie2025,
 title = {Inferring Internal States across Mice and Monkeys Using Facial Features},
 author = {Tlaie, Alejandro and Abd El Hay, Muad Y. and Mert, Berkutay and Taylor, Robert and Ferracci, Pierre-Antoine and Shapcott, Katharine and Glukhova, Mina and Pillow, Jonathan W. and Havenith, Martha N. and Sch{\&#34;o}lvinck, Marieke L.},
 year = {2025},
@@ -553,35 +206,36 @@ publisher = {Nature Publishing Group},
 issn = {2041-1723},
 doi = {10.1038/s41467-025-60296-1}
 }</code></pre>
+        </details>
+        
+      </div>
     </div>
-</div>
-
-
-
-    
-<div id="#open-modal-diverging-roles-of-trpv1-and-trpm2-in-warm-temperature-detection"
-     class="modal-window bg-tp-black invisible fixed top-0 left-0
-            right-0 bottom-0 transition-all pointer-events-none z-50">
-    <div class="absolute top-1/2 left-1/2 p-8 bg-white
-                dark:bg-neutral-700
-
-                max-w-full
-                rounded-md max-w-4/5 -translate-x-1/2 -translate-y-1/2">
-        <button id="#close-modal-diverging-roles-of-trpv1-and-trpm2-in-warm-temperature-detection" title="Close" class="modal-close rounded-sm p-2">✕</button>
-        <h3>Cite <i>Diverging roles of TRPV1 and TRPM2 in warm-temperature detection</i></h3>
-        <button class="modal-copy-citation pr-2 pl-1 my-2 ml-2
-                       bg-sky-600 dark:bg-sky-700 rounded-sm
-                       text-white
-                       dark:text-zinc-200
-                       dark:hover:text-gray-800
-                       hover:text-gray-900
-                       hover:bg-sky-800
-                       disabled:bg-neutral-500
-                       hover:disabled:text-white
-                       dark:hover:disabled:text-zinc-200
-                       dark:disabled:bg-neutral-500
-                       dark:hover:bg-sky-500" id="#copy-4fc0e3ae">Copy to clipboard</button>
-        <pre class="bg-slate-100 dark:bg-slate-800"><code id="4fc0e3ae">@article{Abd_El_Hay_2025,
+  </article>
+  
+  <article class="pub-card" id="diverging-roles-of-trpv1-and-trpm2-in-warm-temperature-detection"
+           itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <div class="pub-thumb">
+      <img src="/img/abdelhay2025.png" alt="Figure from: Diverging roles of TRPV1 and TRPM2 in warm-temperature detection" loading="lazy" itemprop="image">
+    </div>
+    <div class="pub-body">
+      <h3 class="pub-title">
+        <a href="https://doi.org/10.7554/eLife.95618.2" itemprop="name">Diverging roles of TRPV1 and TRPM2 in warm-temperature detection</a>
+      </h3>
+      <p class="pub-meta">
+        <strong class="pub-me" itemprop="author">Abd El Hay, M. Y.</strong>, <span itemprop="author">Kamm, G. B.</span>, <span itemprop="author">Tlaie, A.</span>, <span itemprop="author">Siemens, J.</span>
+         · <em itemprop="publisher">eLife</em>
+        · <span itemprop="datePublished">2025</span>
+      </p>
+      
+      <p class="pub-description" itemprop="description">This study investigates how we sense warmth through specialized neurons. By examining over 20,000 mouse sensory neurons, we found that two ion channels (TRPV1 and TRPM2) play distinct roles in temperature detection. TRPV1 helps with quick warm sensing, while TRPM2 influences how many neurons respond to warmth. These findings help explain how animals make decisions about temperature preferences and maintain thermal comfort.</p>
+      
+      <div class="pub-links">
+        <a href="https://doi.org/10.7554/eLife.95618.2">PDF</a>
+        <a href="https://doi.org/10.7554/eLife.95618.2" itemprop="mainEntityOfPage">Main URL</a>
+        
+        <details class="pub-cite">
+          <summary>Cite</summary>
+          <pre><code>@article{Abd_El_Hay_2025,
 title={Diverging roles of TRPV1 and TRPM2 in warm-temperature detection},
 url={http://dx.doi.org/10.7554/eLife.95618.2},
 DOI={10.7554/elife.95618.2},
@@ -589,35 +243,36 @@ publisher={eLife Sciences Publications, Ltd},
 author={Abd El Hay, Muad Y and Kamm, Gretel B and Tlaie, Alejandro and Siemens, Jan},
 year={2025},
 month=jan }</code></pre>
+        </details>
+        
+      </div>
     </div>
-</div>
-
-
-
-    
-<div id="#open-modal-the-dream-implant-a-lightweight-modular-and-cost-effective-implant-system-for-chronic-electrophysiology-in-head-fixed-and-freely-behaving-mice"
-     class="modal-window bg-tp-black invisible fixed top-0 left-0
-            right-0 bottom-0 transition-all pointer-events-none z-50">
-    <div class="absolute top-1/2 left-1/2 p-8 bg-white
-                dark:bg-neutral-700
-
-                max-w-full
-                rounded-md max-w-4/5 -translate-x-1/2 -translate-y-1/2">
-        <button id="#close-modal-the-dream-implant-a-lightweight-modular-and-cost-effective-implant-system-for-chronic-electrophysiology-in-head-fixed-and-freely-behaving-mice" title="Close" class="modal-close rounded-sm p-2">✕</button>
-        <h3>Cite <i>The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice</i></h3>
-        <button class="modal-copy-citation pr-2 pl-1 my-2 ml-2
-                       bg-sky-600 dark:bg-sky-700 rounded-sm
-                       text-white
-                       dark:text-zinc-200
-                       dark:hover:text-gray-800
-                       hover:text-gray-900
-                       hover:bg-sky-800
-                       disabled:bg-neutral-500
-                       hover:disabled:text-white
-                       dark:hover:disabled:text-zinc-200
-                       dark:disabled:bg-neutral-500
-                       dark:hover:bg-sky-500" id="#copy-2ea446e4">Copy to clipboard</button>
-        <pre class="bg-slate-100 dark:bg-slate-800"><code id="2ea446e4">@article{schroeder2024,
+  </article>
+  
+  <article class="pub-card" id="the-dream-implant-a-lightweight-modular-and-cost-effective-implant-system-for-chronic-electrophysiology-in-head-fixed-and-freely-behaving-mice"
+           itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <div class="pub-thumb">
+      <img src="/img/schroeder2024.jpg" alt="Figure from: The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice" loading="lazy" itemprop="image">
+    </div>
+    <div class="pub-body">
+      <h3 class="pub-title">
+        <a href="https://doi.org/10.3791/66867" itemprop="name">The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice</a>
+      </h3>
+      <p class="pub-meta">
+        <span itemprop="author">Schroeder, T.</span>, <span itemprop="author">Taylor, R.</span>, <strong class="pub-me" itemprop="author">Abd El Hay, M.</strong>, <span itemprop="author">Nemri, A.</span>, <span itemprop="author">França, A.</span>, <span itemprop="author">Battaglia, F.</span>, <span itemprop="author">Tiesinga, P.</span>, <span itemprop="author">Schölvinck, M. L.</span>, <span itemprop="author">Havenith, M. N.</span>
+         · <em itemprop="publisher">JoVE (Journal of Visualized Experiments)</em>
+        · <span itemprop="datePublished">2024</span>
+      </p>
+      
+      <p class="pub-description" itemprop="description">This protocol introduces the DREAM (Dynamic, Recoverable, Economical, Adaptable, and Modular) implant system for chronic electrophysiology in mice. The system provides a lightweight, cost-effective solution with standardized hardware that can be implanted easily and explanted safely for probe reuse, significantly reducing experimental costs while maintaining high-quality recordings.</p>
+      
+      <div class="pub-links">
+        <a href="https://doi.org/10.3791/66867">PDF</a>
+        <a href="https://doi.org/10.3791/66867" itemprop="mainEntityOfPage">JoVE Article</a>
+        
+        <details class="pub-cite">
+          <summary>Cite</summary>
+          <pre><code>@article{schroeder2024,
 title = {The {{DREAM Implant}}: {{A Lightweight}}, {{Modular}}, and {{Cost-Effective Implant System}} for {{Chronic Electrophysiology}} in {{Head-Fixed}} and {{Freely Behaving Mice}}},
 shorttitle = {The {{DREAM Implant}}},
 author = {Schroeder, Tim and Taylor, Robert and Hay, Muad Abd El and Nemri, Abdellatif and França, Arthur and Battaglia, Francesco and Tiesinga, Paul and Schölvinck, Marieke L. and Havenith, Martha N.},
@@ -629,30 +284,27 @@ pages = {e66867},
 issn = {1940-087X},
 doi = {10.3791/66867}
 }</code></pre>
+        </details>
+        
+      </div>
     </div>
+  </article>
+  
 </div>
 
 
-
-
     </main>
-    <footer class="footer container h-10 text-center mt-1">
-<hr class="my-4">
-  <ul class="pl-0 mt-1">
-    
-    <li class="ml-2 first:before:content-none before:content-['•']
-               inline-block list-none">
-      <a class="ml-2 text-neutral-800
-                dark:text-neutral-400 border-none"
-          href="https://github.com/hugcis/hugo-astatine-theme">Code</a>
-    </li>
-    <li class="ml-2 first:before:content-none before:content-['•']
-                text-neutral-800 dark:text-neutral-400 inline-block list-none">
-      <span class="ml-2">© Muad Abd El HAy 2026</span>
-    </li>
-  </ul>
+    <footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© 2026 Muad Abd El HAy</span>
+    <span>
+      
+      Built with <a href="https://gohugo.io">Hugo</a>
+    </span>
+  </div>
 </footer>
 
+    
 <script src="/js/auto-theme.js"></script>
 
 
@@ -663,58 +315,6 @@ doi = {10.3791/66867}
 
 
 <script src="/js/table-of-contents.js"></script>
-
-
-<script>
- 
- function toggleModal(win) {
-     return ((event) => {
-         if (event.target.id.startsWith("#open-modal") || 
-             event.target.id.startsWith("#close-modal") || 
-             event.target.classList.contains("open-modal")) {
-             event.stopPropagation();
-             win.classList.toggle("invisible");
-             win.classList.toggle("pointer-events-auto");
-             document.body.classList.toggle("pointer-events-none");
-         }
-     });
- }
- var list = document.getElementsByClassName("open-modal");
- for (let item of list) {
-     var id = item.attributes["data-target"].textContent;
-	 var modWin = document.getElementById(id);
-     var closeButton = document.getElementById(id.replace("open", "close"));
-
-	 item.addEventListener('click', toggleModal(modWin));
-     closeButton.addEventListener('click', toggleModal(modWin));
-     modWin.addEventListener('click', toggleModal(modWin));
- }
- var clipboardCopyButtons = document.getElementsByClassName("modal-copy-citation");
- for (let button of clipboardCopyButtons) {
-     let citation_id = button.id.replace("#copy-", "");
-     let citation_text = document.getElementById(citation_id);
-     button.addEventListener('click', function (clicked) {
-        return function () {
-            if (!clicked) {
-                var last = this.innerHTML;
-                navigator.clipboard
-                         .writeText(citation_text.innerHTML)
-                         .then(() => {
-                             this.innerHTML = "Copied!";
-                             this.disabled = true;
-                         },
-                               () => {this.innerHTML = "Error copying!";});
-                clicked = true;
-                setTimeout(function () {
-                    this.innerHTML = last;
-                    this.disabled = false;
-                    clicked = false;
-                }.bind(this), 1000);
-            }
-        };
-     }(false), this);
- }
-</script>
 
 
   </body>
