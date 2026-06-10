@@ -19,9 +19,11 @@
   {{ range . }}
   <article class="pub-card" id="{{ anchorize .title }}"
            itemscope itemtype="http://schema.org/ScholarlyArticle">
+    {{ with .image }}
     <div class="pub-thumb">
-      <img src="/{{ .image }}" alt="Figure from: {{ .title }}" loading="lazy" itemprop="image">
+      <img src="/{{ . }}" alt="Figure from publication" loading="lazy" itemprop="image">
     </div>
+    {{ end }}
     <div class="pub-body">
       <h3 class="pub-title">
         <a href="{{ .pdf }}" itemprop="name">{{ .title }}</a>

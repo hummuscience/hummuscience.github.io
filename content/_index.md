@@ -29,6 +29,19 @@ personal_title: "Neuroscientist"
 # List your publications. The required fields are pdf, title, and image 
 # (which should be the image path). The other fields are optional.
 publications:
+  -
+    authors:
+        - name: Abd El Hay, M. Y.
+          me: true
+        - name: Cukić, A.
+        - name: Schölvinck, M. L.
+        - name: Havenith, M. N.
+    title: "Animal Models in Psychedelic Research — Lost in Translation?"
+    date: 2026
+    journal: Preprint
+    citation: "@misc{abdelhay2026,\ntitle = {Animal Models in Psychedelic Research - Lost in Translation?},\nauthor = {Abd El Hay, Muad Y. and Cukić, Ana and Schölvinck, Marieke L. and Havenith, Martha N.},\nyear = {2026}\n}"
+    pdf: "https://orcid.org/0000-0002-5082-1216"
+    description: A critical review of how well rodent models capture the subjective and therapeutic dimensions of psychedelics, and what aspects of psychedelic states are — and are not — accessible in animal research.
   - 
     authors:
         - name: Kamm, G. B.
@@ -118,6 +131,130 @@ publications:
         name: JoVE Article
         url: "https://doi.org/10.3791/66867"
     description: This protocol introduces the DREAM (Dynamic, Recoverable, Economical, Adaptable, and Modular) implant system for chronic electrophysiology in mice. The system provides a lightweight, cost-effective solution with standardized hardware that can be implanted easily and explanted safely for probe reuse, significantly reducing experimental costs while maintaining high-quality recordings.
+  - 
+    authors:
+        - name: Schrenk-Siemens, K.
+        - name: Pohle, J.
+        - name: Rostock, C.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Lam, R. M.
+        - name: Szczot, M.
+        - name: Lu, S.
+        - name: Chesler, A. T.
+        - name: Siemens, J.
+    title: "Human Stem Cell-Derived TRPV1-Positive Sensory Neurons: A New Tool to Study Mechanisms of Sensitization"
+    date: 2022
+    journal: Cells
+    citation: "@article{schrenk-siemens2022,\ntitle = {Human Stem Cell-Derived TRPV1-Positive Sensory Neurons: A New Tool to Study Mechanisms of Sensitization},\nauthor = {Schrenk-Siemens, Katrin and Pohle, J\\\"org and Rostock, Charlotte and Abd El Hay, Muad and Lam, Ruby M. and Szczot, Marcin and Lu, Shiying and Chesler, Alexander T. and Siemens, Jan},\nyear = {2022},\njournal = {Cells},\ndoi = {10.3390/cells11182905}\n}"
+    pdf: https://doi.org/10.3390/cells11182905
+    description: Establishes human stem cell-derived TRPV1-positive sensory neurons as a tool to study how nociceptors become sensitized.
+  - 
+    authors:
+        - name: Kamm, G. B.
+        - name: Boffi, J. C.
+        - name: Zuza, K.
+        - name: Nencini, S.
+        - name: Campos, J.
+        - name: Schrenk-Siemens, K.
+        - name: Sonntag, I.
+        - name: Kabaoğlu, B.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Schwarz, Y.
+        - name: Tappe-Theodor, A.
+        - name: Bruns, D.
+        - name: Acuna, C.
+        - name: Kuner, T.
+        - name: Siemens, J.
+    title: "A synaptic temperature sensor for body cooling"
+    date: 2021
+    journal: Neuron
+    citation: "@article{kamm2021,\ntitle = {A Synaptic Temperature Sensor for Body Cooling},\nauthor = {Kamm, Gretel B. and Boffi, Juan C. and Zuza, Kristina and Nencini, Sara and Campos, Joaquin and Schrenk-Siemens, Katrin and Sonntag, Ivo and Kabao\\u{g}lu, Bur\\c{c}e and Abd El Hay, Muad and Schwarz, Yvonne and Tappe-Theodor, Anke and Bruns, Dieter and Acuna, Claudio and Kuner, Thomas and Siemens, Jan},\nyear = {2021},\njournal = {Neuron},\ndoi = {10.1016/j.neuron.2021.10.001}\n}"
+    pdf: https://doi.org/10.1016/j.neuron.2021.10.001
+    description: Identifies a synaptic warm-temperature sensing mechanism in the hypothalamic preoptic area that drives body cooling.
+  - 
+    authors:
+        - name: Zoller, V.
+        - name: Funcke, J.-B.
+        - name: Roos, J.
+        - name: Dahlhaus, M.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Holzmann, K.
+        - name: Marienfeld, R.
+        - name: Kietzmann, T.
+        - name: Debatin, K.-M.
+        - name: Wabitsch, M.
+        - name: Fischer-Posovszky, P.
+    title: "TRAIL (TNF-related apoptosis-inducing ligand) induces an inflammatory response in human adipocytes"
+    date: 2017
+    journal: Scientific Reports
+    citation: "@article{zoller2017,\ntitle = {Trail (TNF-related Apoptosis-Inducing Ligand) Induces an Inflammatory Response in Human Adipocytes},\nauthor = {Zoller, Verena and Funcke, Jan-Bernd and Roos, Julian and Dahlhaus, Meike and Abd El Hay, Muad and Holzmann, Karlheinz and Marienfeld, Ralf and Kietzmann, Thomas and Debatin, Klaus-Michael and Wabitsch, Martin and Fischer-Posovszky, Pamela},\nyear = {2017},\njournal = {Sci Rep},\ndoi = {10.1038/s41598-017-05932-7}\n}"
+    pdf: https://doi.org/10.1038/s41598-017-05932-7
+    description: Shows that the death ligand TRAIL triggers an inflammatory program in human fat cells.
+  - 
+    authors:
+        - name: Sendi, P.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Brandt, C. M.
+        - name: Spellerberg, B.
+    title: "Group B Streptococcal Toxic Shock Syndrome and covR/S Mutations Revisited"
+    date: 2017
+    journal: Emerging Infectious Diseases
+    citation: "@article{sendi2017,\ntitle = {Group {{B Streptococcal Toxic Shock Syndrome}} and {{covR}}/{{S Mutations Revisited}}},\nauthor = {Sendi, Parham and Abd El Hay, Muad and Brandt, Claudia M. and Spellerberg, Barbara},\nyear = {2017},\njournal = {Emerg Infect Dis},\ndoi = {10.3201/eid2301.161063}\n}"
+    pdf: https://doi.org/10.3201/eid2301.161063
+    description: Revisits the role of covR/S mutations in invasive Group B Streptococcus causing toxic shock syndrome.
+  - 
+    authors:
+        - name: Zoller, V.
+        - name: Funcke, J.-B.
+        - name: Keuper, M.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Debatin, K.-M.
+        - name: Wabitsch, M.
+        - name: Fischer-Posovszky, P.
+    title: "TRAIL Inhibits Human Adipocyte Differentiation via Caspase-Mediated Downregulation of Adipogenic Transcription Factors"
+    date: 2016
+    journal: Cell Death & Disease
+    citation: "@article{zoller2016,\ntitle = {{{TRAIL}} ({{TNF-related}} Apoptosis-Inducing Ligand) Inhibits Human Adipocyte Differentiation via Caspase-Mediated Downregulation of Adipogenic Transcription Factors},\nauthor = {Zoller, Verena and Funcke, Jan-Bernd and Keuper, Michaela and Abd El Hay, Muad and Debatin, Klaus-Michael and Wabitsch, Martin and Fischer-Posovszky, Pamela},\nyear = {2016},\njournal = {Cell Death Dis},\ndoi = {10.1038/cddis.2016.286}\n}"
+    pdf: https://doi.org/10.1038/cddis.2016.286
+    description: Shows that TRAIL blocks fat-cell differentiation by caspase-mediated downregulation of adipogenic transcription factors.
+  - 
+    authors:
+        - name: Funcke, J.-B.
+        - name: Zoller, V.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Debatin, K.-M.
+        - name: Wabitsch, M.
+        - name: Fischer-Posovszky, P.
+    title: "TNF-related Apoptosis-Inducing Ligand Promotes Human Preadipocyte Proliferation via ERK1/2 Activation"
+    date: 2015
+    journal: The FASEB Journal
+    citation: "@article{funcke2015,\ntitle = {{{TNF-related}} Apoptosis-Inducing Ligand Promotes Human Preadipocyte Proliferation via {{ERK1}}/2 Activation},\nauthor = {Funcke, J.-B. and Zoller, V. and Abd El Hay, Muad and Debatin, K.-M. and Wabitsch, M. and Fischer-Posovszky, P.},\nyear = {2015},\njournal = {The FASEB Journal},\ndoi = {10.1096/fj.14-267278}\n}"
+    pdf: https://doi.org/10.1096/fj.14-267278
+    description: Demonstrates that TRAIL drives proliferation of human preadipocytes through ERK1/2 signaling.
+  - 
+    authors:
+        - name: Lemke, J.
+        - name: von Karstedt, S.
+        - name: Abd El Hay, M.
+          me: true
+        - name: Conti, A.
+        - name: Arce, F.
+        - name: Montinaro, A.
+        - name: Papenfuss, K.
+        - name: El-Bahrawy, M. A.
+        - name: Walczak, H.
+    title: "Selective CDK9 Inhibition Overcomes TRAIL Resistance by Concomitant Suppression of cFlip and Mcl-1"
+    date: 2014
+    journal: Cell Death & Differentiation
+    citation: "@article{lemke2014,\ntitle = {Selective {{CDK9}} Inhibition Overcomes {{TRAIL}} Resistance by Concomitant Suppression of {{cFlip}} and {{Mcl-1}}},\nauthor = {Lemke, J. and {von Karstedt}, S. and Abd El Hay, Muad and Conti, A. and Arce, F. and Montinaro, A. and Papenfuss, K. and {El-Bahrawy}, M. A. and Walczak, H.},\nyear = {2014},\njournal = {Cell Death Differ},\ndoi = {10.1038/cdd.2013.179}\n}"
+    pdf: https://doi.org/10.1038/cdd.2013.179
+    description: Shows that selective CDK9 inhibition sensitizes resistant cancer cells to TRAIL by suppressing cFlip and Mcl-1.
 ---
 
 I'm a neuroscientist studying how the brain gives rise to internal states — how warmth and sickness are sensed and represented, and how psychedelics reshape cortical activity and behavior.
