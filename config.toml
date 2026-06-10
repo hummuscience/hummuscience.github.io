@@ -1,6 +1,6 @@
 baseURL = "http://cumol.org/"
 languageCode = "en-us"
-title = "Opinionated Muad"
+title = "Muad Abd El Hay"
 
 # Theme used
 theme = ["osm"]
@@ -45,7 +45,7 @@ pygmentsStyle = "native"
     # missing it will fallback to that one.
     description = """Neuroscientist studying psychedelics and animal behavior."""
     # Author of the site
-    authorName = "Muad Abd El HAy"
+    authorName = "Muad Abd El Hay"
     # Main image for the author. This will be the default image for SEO.
     [params.imgname]
         name = "img/main.jpg"

@@ -2,7 +2,7 @@
 title = "About"
 +++
 
-Hi, I'm Mua'ath — a neuroscientist studying how the brain processes
+Hi, I'm Muad (معاذ) — a neuroscientist studying how the brain processes
 psychedelics and drives animal behavior.
 
 My research spans thermosensation, interoception, and the neural basis of

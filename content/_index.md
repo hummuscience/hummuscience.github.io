@@ -1,7 +1,7 @@
 ---
 # === Required fields  ===
 # Your name 
-name: "Mua'ath"
+name: "Muad · معاذ"
 # Your profile picture
 imgname: 
   name: "img/main.jpg"
