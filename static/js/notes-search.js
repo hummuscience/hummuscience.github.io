@@ -105,7 +105,7 @@ class NotesSearch {
         style.textContent = `
             .notes-search-container {
                 position: fixed;
-                top: 20px;
+                top: 90px;
                 right: 20px;
                 width: 350px;
                 z-index: 1000;
@@ -132,7 +132,7 @@ class NotesSearch {
             #notes-search-input:focus {
                 outline: none;
                 border-color: var(--accent, #b08d57);
-                box-shadow: 0 2px 12px rgba(59, 130, 246, 0.2);
+                box-shadow: 0 2px 12px rgba(176, 141, 87, 0.25);
             }
 
             .search-icon {
