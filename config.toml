@@ -37,6 +37,11 @@ pygmentsStyle = "native"
     weight = -140
 
 [[menu.main]]
+    name = "Contributions"
+    url = "/credit/"
+    weight = -135
+
+[[menu.main]]
     name = "About"
     url = "/about/"
     weight = -130

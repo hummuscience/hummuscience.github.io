@@ -1,0 +1,30 @@
+{{ define "main" }}
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+</header>
+{{ .Content }}
+
+{{ $roles := .Site.Data.credit.roles }}
+<ul class="credit-list">
+  {{ range .Site.Data.credit.papers }}
+  <li class="credit-paper">
+    <a class="credit-paper-title" href="/#{{ anchorize .title }}">{{ .title }}</a>
+    <span class="credit-paper-year">{{ .year }}</span>
+    <div class="credit-roles">
+      {{ $weights := .weights }}
+      {{ range $i, $role := $roles }}
+        {{ $w := index $weights $i }}
+        {{ if eq $w 1 }}<span class="credit-chip credit-chip-led">{{ $role }}</span>
+        {{ else if gt $w 0.0 }}<span class="credit-chip credit-chip-partial">{{ $role }}</span>
+        {{ end }}
+      {{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ul>
+
+<p class="credit-key">
+  <span class="credit-chip credit-chip-led">Led this role</span>
+  <span class="credit-chip credit-chip-partial">Partial contribution</span>
+</p>
+{{ end }}

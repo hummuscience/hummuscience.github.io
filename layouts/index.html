@@ -15,6 +15,11 @@
 
 {{ with .Params.publications }}
 <h2 class="section-heading" id="publications">Publications</h2>
+<p class="pub-legend">
+  <span class="pub-mark">*</span> first author &nbsp;·&nbsp;
+  <span class="pub-mark">†</span> shared first author &nbsp;·&nbsp;
+  <a href="/credit/">contribution details →</a>
+</p>
 <div class="publications">
   {{ range . }}
   <article class="pub-card" id="{{ anchorize .title }}"
@@ -29,7 +34,8 @@
         <a href="{{ .pdf }}" itemprop="name">{{ .title }}</a>
       </h3>
       <p class="pub-meta">
-        {{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if $a.me }}<strong class="pub-me" itemprop="author">{{ $a.name }}</strong>{{ else }}<span itemprop="author">{{ $a.name }}</span>{{ end }}{{ end }}
+        {{ $authorship := .authorship }}
+        {{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if $a.me }}<strong class="pub-me" itemprop="author">{{ $a.name }}{{ if eq $authorship "first" }}<span class="pub-mark" title="First author">*</span>{{ else if eq $authorship "co-first" }}<span class="pub-mark" title="Shared first author">†</span>{{ end }}</strong>{{ else }}<span itemprop="author">{{ $a.name }}</span>{{ end }}{{ end }}
         {{ with .journal }} · <em itemprop="publisher">{{ . }}</em>{{ end }}
         · <span itemprop="datePublished">{{ .date }}</span>
       </p>

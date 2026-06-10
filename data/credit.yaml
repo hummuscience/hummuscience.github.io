@@ -1,0 +1,66 @@
+# CRediT contribution data (https://credit.niso.org/)
+# Source: author's CV \credit{} lines. Each paper lists the roles the author
+# contributed; weight 1 = led/full, fractional = partial contribution.
+# Role order in the CV: Conceptualization, Data curation, Formal analysis,
+# Funding acquisition, Investigation, Methodology, Project administration,
+# Resources, Software, Supervision, Validation, Visualization,
+# Writing - original draft, Writing - review & editing.
+
+# The 14 CRediT roles, in display order.
+roles:
+  - Conceptualization
+  - Data curation
+  - Formal analysis
+  - Funding acquisition
+  - Investigation
+  - Methodology
+  - Project administration
+  - Resources
+  - Software
+  - Supervision
+  - Validation
+  - Visualization
+  - Writing – original draft
+  - Writing – review & editing
+
+# Per-paper weights, newest first (matching homepage order). `key` matches the
+# anchorized homepage publication title so we can deep-link back.
+papers:
+  - title: "Animal Models in Psychedelic Research — Lost in Translation?"
+    year: 2026
+    weights: [1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  - title: "Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex"
+    year: 2025
+    weights: [0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0.3, 1]
+  - title: "Inferring Internal States across Mice and Monkeys Using Facial Features"
+    year: 2025
+    weights: [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1]
+  - title: "Diverging roles of TRPV1 and TRPM2 in warm-temperature detection"
+    year: 2025
+    weights: [1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1]
+  - title: "The DREAM Implant: A Lightweight, Modular, and Cost-Effective Implant System for Chronic Electrophysiology in Head-Fixed and Freely Behaving Mice"
+    year: 2024
+    weights: [0.5, 0.5, 1, 0, 0.25, 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1]
+  # Older papers (2022 and earlier): weights taken from the accurate
+  # (commented) \credit lines in the CV, not the placeholder active lines.
+  - title: "Human Stem Cell-Derived TRPV1-Positive Sensory Neurons: A New Tool to Study Mechanisms of Sensitization"
+    year: 2022
+    weights: [0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0]
+  - title: "A synaptic temperature sensor for body cooling"
+    year: 2021
+    weights: [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0]
+  - title: "TRAIL (TNF-related apoptosis-inducing ligand) induces an inflammatory response in human adipocytes"
+    year: 2017
+    weights: [1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0]
+  - title: "Group B Streptococcal Toxic Shock Syndrome and covR/S Mutations Revisited"
+    year: 2017
+    weights: [0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0]
+  - title: "TRAIL Inhibits Human Adipocyte Differentiation via Caspase-Mediated Downregulation of Adipogenic Transcription Factors"
+    year: 2016
+    weights: [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  - title: "TNF-related Apoptosis-Inducing Ligand Promotes Human Preadipocyte Proliferation via ERK1/2 Activation"
+    year: 2015
+    weights: [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  - title: "Selective CDK9 Inhibition Overcomes TRAIL Resistance by Concomitant Suppression of cFlip and Mcl-1"
+    year: 2014
+    weights: [0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0]

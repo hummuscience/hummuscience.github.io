@@ -38,6 +38,7 @@ publications:
         - name: Havenith, M. N.
     title: "Animal Models in Psychedelic Research — Lost in Translation?"
     date: 2026
+    authorship: first
     journal: Preprint
     citation: "@misc{abdelhay2026,\ntitle = {Animal Models in Psychedelic Research - Lost in Translation?},\nauthor = {Abd El Hay, Muad Y. and Cukić, Ana and Schölvinck, Marieke L. and Havenith, Martha N.},\nyear = {2026}\n}"
     pdf: "https://orcid.org/0000-0002-5082-1216"
@@ -57,6 +58,7 @@ publications:
         - name: Prevedel, R.
     title: "Central Infusion of Prostaglandin E2 Reveals a Unified Representation of Sickness in the Mouse Insular Cortex"
     date: 2025
+    authorship: co-first
     journal: bioRxiv
     image: img/kamm2025.png
     citation: "@misc{kamm2025a,\ntitle = {Central Infusion of Prostaglandin {{E2}} Reveals a Unified Representation of Sickness in the Mouse Insular Cortex},\nauthor = {Kamm, Gretel B. and Boffi, Juan C. and Hay, Muad Y. Abd El and Rajot, Domitille and Cuki{\\'c}, Ana and Havenith, Martha N. and Scholvinck, Marieke and Renier, Nicolas and Asari, Hiroki and Prevedel, Robert},\nyear = {2025},\nmonth = jun,\nprimaryclass = {New Results},\npages = {2025.04.28.651028},\npublisher = {bioRxiv},\ndoi = {10.1101/2025.04.28.651028}\n}"
@@ -99,6 +101,7 @@ publications:
         - name: Siemens, J.
     title: "Diverging roles of TRPV1 and TRPM2 in warm-temperature detection"
     date: 2025
+    authorship: first
     journal: eLife
     image: img/abdelhay2025.png
     citation: "@article{Abd_El_Hay_2025,\ntitle={Diverging roles of TRPV1 and TRPM2 in warm-temperature detection},\nurl={http://dx.doi.org/10.7554/eLife.95618.2},\nDOI={10.7554/elife.95618.2},\npublisher={eLife Sciences Publications, Ltd},\nauthor={Abd El Hay, Muad Y and Kamm, Gretel B and Tlaie, Alejandro and Siemens, Jan},\nyear={2025},\nmonth=jan }"
