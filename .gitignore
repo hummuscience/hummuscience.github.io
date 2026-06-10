@@ -8,3 +8,6 @@
 
 # Tooling artifacts
 .playwright-mcp/
+
+# Hugo
+.hugo_build.lock

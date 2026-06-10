@@ -5,7 +5,6 @@ title = "Opinionated Muad"
 # Theme used
 theme = ["osm"]
 
-preserveTaxonomyNames = true
 rssLimit = 10
 paginate = 10
 
@@ -49,9 +48,9 @@ pygmentsStyle = "native"
     authorName = "Muad Abd El HAy"
     # Main image for the author. This will be the default image for SEO.
     [params.imgname]
-        # name = "img/main.jpg"
+        name = "img/main.jpg"
         # Add an alt description for the image
-        # alt = "Profile picture"
+        alt = "Profile picture"
 
     # Indicate if you host Katex yourself. Defaults to using the CDN KaTex.
     # hostedKaTex = false

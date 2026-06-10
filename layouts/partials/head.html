@@ -15,15 +15,13 @@
 {{ else }}
 <meta property="og:type" content="website">
 {{ end }}
-{{ if .Params.Ogname }}
-<meta property="og:image" content="{{ .Params.Ogname }}">
-{{ else if .Params.Imgname }}
-<meta property="og:image" content="{{ .Params.Imgname.Name }}">
-{{ else if .Params.Caption }}
-<meta property="og:image" content="{{ .Params.Caption.Name }}">
-{{ else }}
-<meta property="og:image" content="{{ .Site.Params.imgname.name }}">
+{{ $ogimg := "" }}
+{{ if .Params.Ogname }}{{ $ogimg = .Params.Ogname }}
+{{ else if .Params.Imgname }}{{ $ogimg = .Params.Imgname.Name }}
+{{ else if .Params.Caption }}{{ $ogimg = .Params.Caption.Name }}
+{{ else if .Site.Params.imgname }}{{ $ogimg = .Site.Params.imgname.name }}
 {{ end }}
+{{ with $ogimg }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
 <meta property="og:url" content="{{ .Permalink }}">
 {{- if .Description -}}
 <meta property="og:description" content="{{ .Description }}">
@@ -74,11 +72,7 @@
 <!-- Site stylesheet -->
 <link rel="stylesheet" href="/css/site.css">
 <!-- Icon configuration -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
 <link href="{{ .Site.BaseURL }}index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
 <meta name="theme-color" content="#fdfbf7">
 <!-- Theme init: runs synchronously in <head> to prevent flash -->
