@@ -80,11 +80,8 @@
 (function(){
   // Block all transitions until page is ready
   document.documentElement.classList.add('no-transitions');
-  // Check manual override (set by auto-theme.js toggle) first,
-  // then legacy key, then system preference
-  var mo = localStorage.getItem('theme-manual-override');
-  var lt = localStorage.getItem('theme');
-  var theme = mo || lt;
+  // Use the saved manual choice, else fall back to the OS preference.
+  var theme = localStorage.getItem('theme');
   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   } else {

@@ -33,10 +33,7 @@
   
   document.documentElement.classList.add('no-transitions');
   
-  
-  var mo = localStorage.getItem('theme-manual-override');
-  var lt = localStorage.getItem('theme');
-  var theme = mo || lt;
+  var theme = localStorage.getItem('theme');
   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   } else {
@@ -161,7 +158,7 @@ influence the effects of compounds.</li>
 </footer>
 
     
-<script src="/js/auto-theme.js"></script>
+<script src="/js/theme-toggle.js"></script>
 
 
 <script src="/js/backlinks.js"></script>
