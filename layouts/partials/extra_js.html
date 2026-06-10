@@ -1,0 +1,16 @@
+{{/* Custom auto-theme JavaScript */}}
+<script src="/js/auto-theme.js"></script>
+
+{{/* Backlinks system for org-roam content */}}
+<script src="/js/backlinks.js"></script>
+
+{{/* Notes search functionality */}}
+<script src="/js/notes-search.js"></script>
+
+{{/* Table of contents for content pages */}}
+<script src="/js/table-of-contents.js"></script>
+
+{{/* To render math when the KaTex parameter is set */}}
+{{- if .Params.KaTex -}}
+{{ partial "katex.html" . }}
+{{- end -}}

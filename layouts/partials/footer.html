@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span>© {{ now.Format "2006" }} {{ .Site.Params.authorName }}</span>
+    <span>
+      {{ if .Site.Params.blogrss }}<a href="{{ .Site.BaseURL }}index.xml">RSS</a> · {{ end }}
+      Built with <a href="https://gohugo.io">Hugo</a>
+    </span>
+  </div>
+</footer>

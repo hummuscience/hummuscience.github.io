@@ -1,0 +1,111 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1">
+{{- if eq .RelPermalink "/" -}}
+<title>{{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Site.Title }}">
+{{- else if .Title -}}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+{{- else -}}
+<title>{{ .Section | humanize }} - {{ .Site.Title }}</title>
+<meta property="og:title" content="{{ .Section | humanize  }} - {{ .Site.Title }}">
+{{- end -}}
+{{ if .IsPage }}
+<meta property="og:type" content="article">
+{{ else }}
+<meta property="og:type" content="website">
+{{ end }}
+{{ if .Params.Ogname }}
+<meta property="og:image" content="{{ .Params.Ogname }}">
+{{ else if .Params.Imgname }}
+<meta property="og:image" content="{{ .Params.Imgname.Name }}">
+{{ else if .Params.Caption }}
+<meta property="og:image" content="{{ .Params.Caption.Name }}">
+{{ else }}
+<meta property="og:image" content="{{ .Site.Params.imgname.name }}">
+{{ end }}
+<meta property="og:url" content="{{ .Permalink }}">
+{{- if .Description -}}
+<meta property="og:description" content="{{ .Description }}">
+<meta name="Description" property="description" content="{{ .Description }}">
+{{- else if and (eq .Type "notes") (ne .Kind "section") }}
+{{ $description := printf "%s %s" "Notes about " (strings.TrimPrefix "Notes on: " .Title) }}
+<meta property="og:description" content="{{ $description }}">
+<meta name="Description" property="description" content="{{ $description }}">
+{{- else if and (eq .Type "tags") (ne .Kind "taxonomy") }}
+{{ $description := printf "%s %s" "All articles tagged with " .Title }}
+<meta property="og:description" content="{{ $description }}">
+<meta name="Description" property="description" content="{{ $description }}">
+{{- else if and (eq .Type "tags") (eq .Kind "taxonomy") }}
+{{ $description := printf "%s" "A list of all the tags in the site. They are arranged in a word cloud" }}
+<meta property="og:description" content="{{ $description }}">
+<meta name="Description" property="description" content="{{ $description }}">
+{{- else -}}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+<meta name="Description" property="description" content="{{ .Site.Params.description }}">
+{{- end -}}
+{{ if .Site.Params.Twitter.Name }}
+<link rel="me" href="https://twitter.com/{{ .Site.Params.Twitter.Name }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="{{ .Site.Params.Twitter.Name }}">
+<meta name="twitter:creator" content="{{ .Site.Params.Twitter.Name }}">
+{{ end }}
+{{ if (and .Site.Params.Mastodon.Name .Site.Params.Mastodon.Host) }}
+<link rel="me" href="https://{{ .Site.Params.Mastodon.Host }}/{{ .Site.Params.Mastodon.Name }}">
+{{ end }}
+{{ if .Site.Params.Sameas }}
+<link rel="me" href="{{ .Site.Params.Sameas }}">
+{{ end }}
+<!-- Keywords -->
+{{- if .Keywords -}}
+<meta property="keywords" content ="{{ delimit .Keywords ", " }}">
+{{- end -}}
+{{- if .Params.Tags -}}
+<meta property="keywords" content ="{{ delimit (apply .Params.Tags "lower" ".") ", " }}">
+{{- end -}}
+<!-- Webmention -->
+{{ if .Site.Params.Webmention }}
+<link rel="webmention" href="https://webmention.io/{{ .Site.Params.Webmention }}/webmention">
+<link rel="pingback" href="https://webmention.io/{{ .Site.Params.Webmention }}/xmlrpc">
+{{ end }}
+<!-- Self-hosted fonts (preload the two weights used above the fold) -->
+<link rel="preload" href="/fonts/lora-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Site stylesheet -->
+<link rel="stylesheet" href="/css/site.css">
+<!-- Icon configuration -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link href="{{ .Site.BaseURL }}index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
+<meta name="theme-color" content="#fdfbf7">
+<!-- Theme init: runs synchronously in <head> to prevent flash -->
+<script>
+(function(){
+  // Block all transitions until page is ready
+  document.documentElement.classList.add('no-transitions');
+  // Check manual override (set by auto-theme.js toggle) first,
+  // then legacy key, then system preference
+  var mo = localStorage.getItem('theme-manual-override');
+  var lt = localStorage.getItem('theme');
+  var theme = mo || lt;
+  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  // Re-enable transitions after first paint
+  window.addEventListener('load', function(){
+    requestAnimationFrame(function(){
+      document.documentElement.classList.remove('no-transitions');
+    });
+  });
+})();
+</script>
+<style>
+  .no-transitions, .no-transitions *, .no-transitions *::before, .no-transitions *::after {
+    transition: none !important;
+  }
+</style>
