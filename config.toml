@@ -36,12 +36,6 @@ pygmentsStyle = "native"
     url = "/notes/"
     weight = -150
 
-# This links to the page about.md
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = -110
-
 # Make the tags and categories pages accessible directly from the navbar.
 [[menu.main]]
     name = "Tags"
@@ -57,7 +51,7 @@ pygmentsStyle = "native"
 [params]
     # Site description. Individual pages can have descriptions too but if
     # missing it will fallback to that one.
-    description = """The homepage Muad."""
+    description = """Neuroscientist studying psychedelics and animal behavior."""
     # Author of the site
     authorName = "Muad Abd El HAy"
     # Main image for the author. This will be the default image for SEO.

@@ -18,8 +18,14 @@
 
 
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
 
 <link rel="stylesheet" href="http://cumol.org/css/style.min.css">
+
+<link rel="stylesheet" href="/css/centered-layout.css">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -27,10 +33,35 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link href="http://cumol.org/index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#faf9f7">
 
-
-<script>function updateMode(){localStorage.theme==='dark'||!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches?document.documentElement.classList.add('dark'):document.documentElement.classList.remove('dark')}function toggleMode(){localStorage.theme==='dark'?localStorage.theme='light':localStorage.theme='dark',updateMode()}window.onload=updateMode();function toggleMenu(){let a=document.getElementById("navbar-default");a.classList.contains("hidden")?a.classList.remove("hidden"):a.classList.add("hidden")}</script>
+<script>
+(function(){
+  
+  document.documentElement.classList.add('no-transitions');
+  
+  
+  var mo = localStorage.getItem('theme-manual-override');
+  var lt = localStorage.getItem('theme');
+  var theme = mo || lt;
+  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  
+  window.addEventListener('load', function(){
+    requestAnimationFrame(function(){
+      document.documentElement.classList.remove('no-transitions');
+    });
+  });
+})();
+</script>
+<style>
+  .no-transitions, .no-transitions *, .no-transitions *::before, .no-transitions *::after {
+    transition: none !important;
+  }
+</style>
 
   </head>
   <body>
@@ -82,11 +113,6 @@
         <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
           <a class="text-zinc-600 dark:text-zinc-300
                     hover:border-b-0" href="/tags/">Tags</a>
-        </li>
-        
-        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
-          <a class="text-zinc-600 dark:text-zinc-300
-                    hover:border-b-0" href="/about/">About</a>
         </li>
         
         <li class="h-7 pl-2.5 pr-0 list-none">
@@ -188,10 +214,22 @@
     </li>
     <li class="ml-2 first:before:content-none before:content-['•']
                 text-neutral-800 dark:text-neutral-400 inline-block list-none">
-      <span class="ml-2">© Muad Abd El HAy 2025</span>
+      <span class="ml-2">© Muad Abd El HAy 2026</span>
     </li>
   </ul>
 </footer>
+
+<script src="/js/auto-theme.js"></script>
+
+
+<script src="/js/backlinks.js"></script>
+
+
+<script src="/js/notes-search.js"></script>
+
+
+<script src="/js/table-of-contents.js"></script>
+
 
 
 

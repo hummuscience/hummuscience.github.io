@@ -6,13 +6,22 @@
     <description>Recent content in Tags on Opinionated Muad</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 Jan 2025 19:55:12 +0100</lastBuildDate><atom:link href="http://cumol.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://cumol.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>org-mode</title>
-      <link>http://cumol.org/tags/org-mode/</link>
-      <pubDate>Sun, 12 Jan 2025 19:55:12 +0100</pubDate>
+      <title>hummus</title>
+      <link>http://cumol.org/tags/hummus/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://cumol.org/tags/org-mode/</guid>
+      <guid>http://cumol.org/tags/hummus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recipes</title>
+      <link>http://cumol.org/tags/recipes/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://cumol.org/tags/recipes/</guid>
       <description></description>
     </item>
     

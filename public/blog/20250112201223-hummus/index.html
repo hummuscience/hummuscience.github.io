@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1"><title>Hummus - Opinionated Muad</title>
+<meta property="og:title" content="Hummus - Opinionated Muad">
+<meta property="og:type" content="article">
+
+
+<meta property="og:image" content="">
+
+<meta property="og:url" content="http://cumol.org/blog/20250112201223-hummus/"><meta property="og:description" content="Neuroscientist studying psychedelics and animal behavior.">
+<meta name="Description" property="description" content="Neuroscientist studying psychedelics and animal behavior.">
+
+
+<meta property="keywords" content ="hummus, recipes">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="http://cumol.org/css/style.min.css">
+
+<link rel="stylesheet" href="/css/centered-layout.css">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link href="http://cumol.org/index.xml" type="application/atom+xml" rel="alternate" title="Sitewide Atom feed" />
+<meta name="theme-color" content="#faf9f7">
+
+<script>
+(function(){
+  
+  document.documentElement.classList.add('no-transitions');
+  
+  
+  var mo = localStorage.getItem('theme-manual-override');
+  var lt = localStorage.getItem('theme');
+  var theme = mo || lt;
+  if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  
+  window.addEventListener('load', function(){
+    requestAnimationFrame(function(){
+      document.documentElement.classList.remove('no-transitions');
+    });
+  });
+})();
+</script>
+<style>
+  .no-transitions, .no-transitions *, .no-transitions *::before, .no-transitions *::after {
+    transition: none !important;
+  }
+</style>
+
+  </head>
+  <body>
+    <header class="md:px-0 px-2">
+        <nav >
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <div class="nav-main my-2.5">
+      <a href="http://cumol.org/" class="nav-title py-2.5 text-2xl
+               text-zinc-600 dark:text-zinc-300 hover:border-b-0">Opinionated Muad</a>
+    </div>
+    <button type="button"
+            onclick="toggleMenu()"
+            class="inline-flex items-center p-2 ml-3
+                  text-sm text-gray-500
+                  rounded-lg md:hidden hover:bg-gray-100
+                  focus:outline-none focus:ring-2
+                  focus:ring-gray-200 dark:text-gray-400
+                  dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor"
+             viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1
+                           0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                           01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0
+                           01-1-1z" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <ul class="grid md:grid-flow-col items-center justify-between text-lg
+                 my-2.5 grid-cols-1 pl-0 text-center">
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/blog/">Blog</a>
+        </li>
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/notes/">Notes</a>
+        </li>
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/categories/">Categories</a>
+        </li>
+        
+        <li class="p-2.5 md:first:pl-0 md:border-none border-b dark:border-zinc-500 list-none">
+          <a class="text-zinc-600 dark:text-zinc-300
+                    hover:border-b-0" href="/tags/">Tags</a>
+        </li>
+        
+        <li class="h-7 pl-2.5 pr-0 list-none">
+          <button type="button" onclick="toggleMode()" class="h-full"  aria-label="Toggle between dark and light mode">
+            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 hidden dark:inline"
+                 id="ligh-mode-button-img"
+                 alt="A sun icon for switching to light mode"
+                 src="http://cumol.org/img/light_mode.svg">
+            <img class="h-7 w-7 max-h-full mb-1.5 p-1.5 inline dark:hidden"
+                 id="dark-mode-button-img"
+                 alt="A moon icon for switching to dark mode"
+                 src="http://cumol.org/img/dark_mode.svg">
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    </header>
+    <main class="content h-card container mt-2 m-auto
+                 leading-loose md:px-0 px-2 z-0"
+          role="main">
+    
+<article class="article h-entry" itemprop="mainEntity" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="title-container">
+        <h1 class="article-title p-name" itemprop="name">Hummus</h1>
+        
+        <div class="flex justify-between items-center">
+            
+            <a class="text-lg text-gray-600 dark:text-gray-400 border-none u-url" href="http://cumol.org/blog/20250112201223-hummus/">
+                <time itemprop="datePublished" class="dt-published"
+                    datetime="2025-01-12T00:00:00Z"
+                    content="2025-01-12T00:00:00Z">
+                    2025.01.12
+                </time>
+            </a>
+            
+            
+                
+                <a class="text-gray-600 dark:text-gray-400 text-right border-none p-author h-card" rel="author" href="http://cumol.org/" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">[muad abd el hay]</span></a>
+                
+            
+        </div>
+        
+    </div>
+
+    <div class="article-content e-content" itemprop="articleBody">
+        <p>I have opinions, some of them quite strong ones. And one opinion that I seem to not be able to change is that there is <strong>rubbish</strong> hummus in Germany.</p>
+<p>Every once in a while, a dear and well-intentioned friend <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> will approach me with this great hummu place they have discovered in XY-city that I should try. And so, I add it to my  <a href="https://maps.app.goo.gl/snpkXVtkL7U2gJ4Y7">&ldquo;To Try&rdquo; map</a> and once I am in the area, I will give it a try. Apart from that, there are those times where someone brings some home-made hummus with them to a party I stumble onto a place by chance while walking through a city&hellip;</p>
+<p>Sadly, I haven&rsquo;t found a place that I genuinniley like. Now before you think that I am just some snobbish, judgemental and entitled person, I can assure you, I <strong>also</strong> suck at making hummus. In fact, I would probably rate my best attempt as an optimistic 5/10.</p>
+<p>Why is the standard so high? What is it hard to make good hummus? What the heck is <strong>good</strong> hummus? And is there a place somewhere in europe that is actually good? In an attempt to turn my ramblings at parties or during lunch into something more constructive, I thought I will put this post together to write some thoughts, highlight some places with fantastic hummus, some places I have tried and document my attempts to make <del>great</del> better hummus.</p>
+<h2 id="why-is-hummus-so-important">Why is Hummus so important?</h2>
+<p>Where I come from, it is impossible to imagine a meal without a plate of hummus and fresh pita bread <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Its a simple arrangements, you take some hummus from the plastic container it usually comes in (yes, we buy it), put it in the center of a plate, take a big spoon, press it into the center and then rotate the plate while pointing the soon to the outside. When done, add some olive oil, maybe some daqqa <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, boiled chickpeas in the middle and sprinkel with some paprika/cumin powder and parsley if you feel fancy.</p>
+<figure><img src="/ox-hugo/hummus-example.jpg"/>
+</figure>
+
+<p>Contrary to common belief, we actually <strong>never</strong> made Hummus ourselves at home. After asking around, it seems that my family wasn&rsquo;t special with this. Why bother? There are places that specialize in making hummus. Daily. Fresh, warm, and they sell it in the kilos. On top of that, these places are so good that any &ldquo;home made&rdquo; hummus I ate in the middle east was a weak imitation at best. This is also the problem with these places. Once you ate there, they become your comparison, and also the bane of your hummus-existence (mine at least), chasing that taste through europe &gt;.&lt;</p>
+<p>I would like to mention the three places that defined my hummus palette. If you ever have a chance to visit there, DO IT!</p>
+<h2 id="temples-of-hummus">Temples of Hummus</h2>
+<h3 id="hummus-lul-tira-israel-palestine">Hummus Lul - Tira, Israel/Palestine<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></h3>
+<h3 id="hummuas-abu-nidal-tul-karem-west-bank">Hummuas Abu Nidal - Tul Karem - West Bank</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<iframe width="100%" height="600px" frameBorder="0" src="https://umap.openstreetmap.fr/en/map/abunidal_20250112?scaleControl=true&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=true&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=true//"></iframe>
+
+<p>A bit towards the south-east of the Tul Karem old town, coming from the direction of Taybe and Irtah. A small place, not very obvious, except by the line in front of it.</p>
+<p><img src="/ox-hugo/abunidal-empty.png" alt="">
+<img src="/ox-hugo/abunidal-full.png" alt=""></p>
+<p>The original owner of the place (Abu Nidal) learned how to make Hummus in Nablus <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> in 1960s. In 1971, he decided to get open his own place and moved to Tul Karem. First with a small shop int he Tul Karem refugee camp, he later moved to the current location where the shop has been a peoples favorite for the past 40+ years! Sadly, Abu Nidal died in 2013, but the place continues to be ran by his previous workes. It even seems like it expanded with a second branch close the to municipality building!</p>
+<p>One thing that always fascinated me with Abu Nidal is their that they always &ldquo;finished&rdquo; the hummus freshly. For sure, they would also prepare the hummus in large food processors before, but you could always watch them over the counter while they added some hot water and parsley and then <a href="https://www.facebook.com/watch/?v=165894328970621">mix it by hand before serving you a plate.</a></p>
+<figure><img src="/ox-hugo/abunidal3.jpg"/>
+</figure>
+
+<p>For some people, Abu Nidal rings another bell.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>You know who you are. I still love you. Keep sending me suggestions for Hummus places to try in Berlin &lt;3&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Another topic that I could write a whole blogpost about. I can&rsquo;t wait for the &ldquo;islamisierung der abendlandes&rdquo; so I can finally enjoy some good pita bread.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Daqqa, <strong>not</strong> dukka. Its some form of relish/sauce made out of lemon juie, garlic and chillies. Think of it as a more watered-down <a href="https://de.wikipedia.org/wiki/S-chug_(Sauce)">Zhug</a>, more green than red. Funnily, I don&rsquo;t like it. But the majority of people love it!&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>I will refer to this place as Israel/Palestine. Sometimes I will call it &ldquo;the holy land&rdquo; or &ldquo;the land&rdquo;. Maybe I will also let a &ldquo;Canaan&rdquo; slip in between.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>A larger city in the North-East of Tul Karem known for its Knafeh&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    
+<ul class="list-none pl-0 font-sm align-left">
+
+<hr>
+<li class="list-none">
+    Categories:
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/categories/food">
+    <span class="tag-item dark:bg-zinc-900 dark:hover:bg-zinc-700
+                 hover:bg-zinc-200 bg-zinc-100
+                 dark:border-zinc-600 py-0.5
+                 px-1 rounded-t border-b-2 border-zinc-300
+                 hover:border-zinc-500">
+    food
+    </span>
+</a>
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/categories/cooking">
+    <span class="tag-item dark:bg-zinc-900 dark:hover:bg-zinc-700
+                 hover:bg-zinc-200 bg-zinc-100
+                 dark:border-zinc-600 py-0.5
+                 px-1 rounded-t border-b-2 border-zinc-300
+                 hover:border-zinc-500">
+    cooking
+    </span>
+</a>
+</li >
+
+
+<li class="list-none">
+    Tags:
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/tags/hummus">
+        <span class="flex flex-row justify-start items-center
+                     dark:bg-zinc-900 dark:hover:bg-zinc-700
+                     hover:bg-zinc-300 bg-zinc-200
+                     dark:border-zinc-600 py-0.5
+                     px-1 rounded-t border-b-2 border-zinc-300
+                     hover:border-zinc-500">
+            
+            <img class="h-4 mr-2 inline" src="http://cumol.org/images/tag_logo.svg"
+                 alt="Logo of a tag: indicates that a tag item follows.">
+            hummus
+        </span>
+    </a>
+    
+    <a class="inline-block mt-2 mr-2 border-none text-neutral-800 dark:text-neutral-200"
+       href="/tags/recipes">
+        <span class="flex flex-row justify-start items-center
+                     dark:bg-zinc-900 dark:hover:bg-zinc-700
+                     hover:bg-zinc-300 bg-zinc-200
+                     dark:border-zinc-600 py-0.5
+                     px-1 rounded-t border-b-2 border-zinc-300
+                     hover:border-zinc-500">
+            
+            <img class="h-4 mr-2 inline" src="http://cumol.org/images/tag_logo.svg"
+                 alt="Logo of a tag: indicates that a tag item follows.">
+            recipes
+        </span>
+    </a>
+    
+</li>
+
+</ul>
+
+
+    
+
+    
+    <div class="text-neutral-500 mb-4">
+        Last modified <span itemprop="dateModified"
+                            datetime="2025-01-12T23:48:00&#43;0100"
+                            content="2025-01-12T23:48:00&#43;0100">
+        2025.01.12
+        </span>
+    </div>
+    
+</article>
+
+    </main>
+    <footer class="footer container h-10 text-center mt-1">
+<hr class="my-4">
+  <ul class="pl-0 mt-1">
+    
+    <li class="ml-2 first:before:content-none before:content-['•']
+               inline-block list-none">
+      <a class="ml-2 text-neutral-800
+                dark:text-neutral-400 border-none"
+          href="https://github.com/hugcis/hugo-astatine-theme">Code</a>
+    </li>
+    <li class="ml-2 first:before:content-none before:content-['•']
+                text-neutral-800 dark:text-neutral-400 inline-block list-none">
+      <span class="ml-2">© Muad Abd El HAy 2026</span>
+    </li>
+  </ul>
+</footer>
+
+<script src="/js/auto-theme.js"></script>
+
+
+<script src="/js/backlinks.js"></script>
+
+
+<script src="/js/notes-search.js"></script>
+
+
+<script src="/js/table-of-contents.js"></script>
+
+
+
+
+  </body>
+</html>
