@@ -229,7 +229,7 @@ class BacklinksSystem {
             }
 
             .dark .backlinks-title {
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--text, #e8e4dc);
                 border-color: var(--border, #2c2820);
             }
 

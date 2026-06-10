@@ -207,7 +207,7 @@ class NotesSearch {
             .dark .notes-search-container #notes-search-input {
                 background: var(--bg-card, #1f1c15);
                 border-color: var(--border, #2c2820);
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--text, #e8e4dc);
             }
 
             .dark .notes-search-container #notes-search-input:focus {
@@ -232,7 +232,7 @@ class NotesSearch {
             }
 
             .dark .search-result-title {
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--accent, #c9a36a);
             }
 
             .dark .search-result-excerpt {

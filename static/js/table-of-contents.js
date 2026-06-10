@@ -147,7 +147,7 @@ class TableOfContents {
                 margin: 0;
                 font-size: 14px;
                 font-weight: 600;
-                color: var(--bg-card, #1f1c15);
+                color: var(--text, #1a1a1a);
             }
 
             .toc-toggle {
@@ -162,7 +162,7 @@ class TableOfContents {
 
             .toc-toggle:hover {
                 background: var(--border, #ece7de);
-                color: var(--bg-card, #1f1c15);
+                color: var(--text, #1a1a1a);
             }
 
             .toc-nav {
@@ -194,7 +194,7 @@ class TableOfContents {
             }
 
             .toc-link:hover {
-                color: var(--bg-card, #1f1c15);
+                color: var(--text, #1a1a1a);
                 background: var(--thumb-bg, #e8e2d8);
                 border-left-color: var(--border, #ece7de);
             }
@@ -227,7 +227,7 @@ class TableOfContents {
             }
 
             .dark .toc-header h3 {
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--text, #e8e4dc);
             }
 
             .dark .toc-toggle {
@@ -236,7 +236,7 @@ class TableOfContents {
 
             .dark .toc-toggle:hover {
                 background: var(--text-muted, #8a8378);
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--text, #e8e4dc);
             }
 
             .dark .toc-link {
@@ -244,7 +244,7 @@ class TableOfContents {
             }
 
             .dark .toc-link:hover {
-                color: var(--thumb-bg, #e8e2d8);
+                color: var(--text, #e8e4dc);
                 background: var(--border, #2c2820);
                 border-left-color: var(--text-muted, #8a8378);
             }
