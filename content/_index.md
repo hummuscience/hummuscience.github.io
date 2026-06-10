@@ -120,6 +120,6 @@ publications:
     description: This protocol introduces the DREAM (Dynamic, Recoverable, Economical, Adaptable, and Modular) implant system for chronic electrophysiology in mice. The system provides a lightweight, cost-effective solution with standardized hardware that can be implanted easily and explanted safely for probe reuse, significantly reducing experimental costs while maintaining high-quality recordings.
 ---
 
-By day I'm a neuroscientist studying how the brain processes psychedelics and drives animal behavior. On weekends you might find me at a rave giving a harm-reduction talk.
+I'm a neuroscientist studying how the brain gives rise to internal states — how warmth and sickness are sensed and represented, and how psychedelics reshape cortical activity and behavior.
 
-This is my corner of the internet — part research log, part food journal, part whatever I find interesting. Think of it as my alternative to social media: a place to share ideas without platform restrictions.
+Outside the lab I'm active in psychedelic harm reduction, and this site doubles as my research log, food journal, and notebook of things I find interesting.
