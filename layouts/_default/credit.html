@@ -5,26 +5,41 @@
 {{ .Content }}
 
 {{ $roles := .Site.Data.credit.roles }}
-<ul class="credit-list">
-  {{ range .Site.Data.credit.papers }}
-  <li class="credit-paper">
-    <a class="credit-paper-title" href="/#{{ anchorize .title }}">{{ .title }}</a>
-    <span class="credit-paper-year">{{ .year }}</span>
-    <div class="credit-roles">
-      {{ $weights := .weights }}
-      {{ range $i, $role := $roles }}
-        {{ $w := index $weights $i }}
-        {{ if eq $w 1 }}<span class="credit-chip credit-chip-led">{{ $role }}</span>
-        {{ else if gt $w 0.0 }}<span class="credit-chip credit-chip-partial">{{ $role }}</span>
+
+<div class="credit-matrix-wrap">
+  <table class="credit-matrix">
+    <thead>
+      <tr>
+        <th class="credit-corner" scope="col">Publication</th>
+        {{ range $roles }}
+        <th class="credit-role-head" scope="col"><span>{{ . }}</span></th>
         {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      {{ range .Site.Data.credit.papers }}
+      <tr>
+        <th class="credit-row-head" scope="row">
+          <a href="/#{{ anchorize .title }}">{{ .title }}</a>
+          <span class="credit-row-year">{{ .year }}</span>
+        </th>
+        {{ $weights := .weights }}
+        {{ range $i, $role := $roles }}
+          {{ $w := index $weights $i }}
+          {{ if eq $w 1 }}<td class="credit-cell credit-led" title="{{ $role }}: led"></td>
+          {{ else if gt $w 0.0 }}<td class="credit-cell credit-partial" title="{{ $role }}: partial"></td>
+          {{ else }}<td class="credit-cell" title="{{ $role }}: none"></td>
+          {{ end }}
+        {{ end }}
+      </tr>
       {{ end }}
-    </div>
-  </li>
-  {{ end }}
-</ul>
+    </tbody>
+  </table>
+</div>
 
 <p class="credit-key">
-  <span class="credit-chip credit-chip-led">Led this role</span>
-  <span class="credit-chip credit-chip-partial">Partial contribution</span>
+  <span class="credit-swatch credit-led"></span> Led &nbsp;
+  <span class="credit-swatch credit-partial"></span> Partial &nbsp;
+  <span class="credit-swatch"></span> No contribution
 </p>
 {{ end }}
