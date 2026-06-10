@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Opinionated Muad"
 
 # Theme used
-theme = ["osm","hugo-astatine-theme"]
+theme = ["osm"]
 
 preserveTaxonomyNames = true
 rssLimit = 10
@@ -25,7 +25,6 @@ pygmentsStyle = "native"
     page = "/:slug/"
 
 # Configure main navbar links. They can have a weight to select the order.
-# This links to content within the content/post/ folder
 [[menu.main]]
     name = "Blog"
     url = "/blog/"
@@ -34,17 +33,11 @@ pygmentsStyle = "native"
 [[menu.main]]
     name = "Notes"
     url = "/notes/"
-    weight = -150
-
-# Make the tags and categories pages accessible directly from the navbar.
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = -120
+    weight = -140
 
 [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
+    name = "About"
+    url = "/about/"
     weight = -130
 
 # Site wide params and SEO
