@@ -1,0 +1,458 @@
+/* ==========================================================================
+   site.css — Refined Academic design
+   Single stylesheet for cumol.org. Light/dark via CSS custom properties;
+   the .dark class on <html> flips the tokens (set by auto-theme.js and the
+   inline head script). No framework.
+   ========================================================================== */
+
+/* --- Fonts (self-hosted, GDPR-safe) --- */
+@font-face {
+  font-family: 'Lora'; font-style: normal; font-weight: 400;
+  font-display: swap; src: url('/fonts/lora-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora'; font-style: italic; font-weight: 400;
+  font-display: swap; src: url('/fonts/lora-400i.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('/fonts/lora-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Lora'; font-style: normal; font-weight: 700;
+  font-display: swap; src: url('/fonts/lora-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 400;
+  font-display: swap; src: url('/fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 500;
+  font-display: swap; src: url('/fonts/inter-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 600;
+  font-display: swap; src: url('/fonts/inter-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter'; font-style: normal; font-weight: 700;
+  font-display: swap; src: url('/fonts/inter-700.woff2') format('woff2');
+}
+
+/* --- Design tokens --- */
+:root {
+  --bg: #fdfbf7;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-heading: #1a1a1a;
+  --text-body: #44403a;
+  --text-muted: #8a8378;
+  --accent: #b08d57;
+  --border: #ece7de;
+  --thumb-bg: #e8e2d8;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+  /* Legacy aliases — the injected styles in backlinks.js / notes-search.js /
+     table-of-contents.js reference these names. Do not remove. */
+  --bg-color: var(--bg-card);
+  --border-color: var(--border);
+  --text-color: var(--text);
+  --item-bg: var(--bg);
+
+  --font-serif: 'Lora', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', 'Fira Code', Menlo, monospace;
+}
+
+.dark {
+  --bg: #16140f;
+  --bg-card: #1f1c15;
+  --text: #e8e4dc;
+  --text-heading: #f0ece4;
+  --text-body: #bdb6a9;
+  --text-muted: #9a9284;
+  --accent: #c9a36a;
+  --border: #2c2820;
+  --thumb-bg: #353026;
+  --shadow: none;
+}
+
+/* --- Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hidden { display: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--text-heading);
+  line-height: 1.3;
+  margin: 2em 0 0.6em;
+}
+h1 { font-size: 2rem; font-weight: 600; }
+h2 { font-size: 1.5rem; font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; }
+h4, h5, h6 { font-size: 1.05rem; font-weight: 600; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+strong, b { color: var(--text-heading); }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+img { max-width: 100%; height: auto; border-radius: 6px; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem;
+  border-left: 3px solid var(--accent);
+  color: var(--text-muted);
+}
+blockquote p { margin: 0.5rem 0; }
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--thumb-bg);
+  color: var(--text-heading);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+/* Chroma highlight blocks carry inline colors (pygmentsStyle=native, dark).
+   Give them a consistent shell and undo the inline-code chip inside. */
+pre {
+  overflow-x: auto;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background: #202020;
+  line-height: 1.5;
+}
+pre code { background: none; padding: 0; color: inherit; font-size: 0.85rem; }
+.highlight pre { margin: 1.5rem 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.92em;
+}
+th, td { border: 1px solid var(--border); padding: 0.5rem 0.75rem; text-align: left; }
+th { font-family: var(--font-sans); font-weight: 600; color: var(--text-heading); background: var(--thumb-bg); }
+
+figure { margin: 1.5rem 0; }
+figcaption { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+::selection { background: var(--accent); color: #fff; }
+
+/* --- Layout --- */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 4rem;
+}
+
+/* Sidebar coexistence: JS adds these body classes when it injects sidebars.
+   Sidebars are fixed-position (styles injected by the JS files themselves).
+   Between 1200–1499px the centered column would collide with them. */
+@media (min-width: 1200px) and (max-width: 1499px) {
+  body.has-right-sidebar main { margin-right: 360px; }
+  body.has-toc main { margin-left: 340px; }
+}
+/* Below 1200px: single column, no floating panels (JS media queries only
+   kick in at 1024px, so enforce the 1200px cutoff here). */
+@media (max-width: 1199px) {
+  .backlinks-sidebar, .notes-search-container, .toc-sidebar {
+    display: none !important;
+  }
+}
+
+/* --- Header / nav --- */
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.site-header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.site-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+.site-title:hover { border-bottom-color: transparent; color: var(--accent); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+#navbar-default ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#navbar-default a {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+#navbar-default a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+}
+.theme-toggle:hover { color: var(--accent); }
+.icon-sun { display: none; }
+.dark .icon-sun { display: inline; }
+.dark .icon-moon { display: none; }
+
+@media (max-width: 767px) {
+  .nav-toggle { display: inline-flex; }
+  #navbar-default { width: 100%; }
+  #navbar-default.hidden { display: none; }
+  #navbar-default ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 0;
+  }
+  #navbar-default li { width: 100%; border-bottom: 1px solid var(--border); }
+  #navbar-default li:last-child { border-bottom: none; }
+  #navbar-default a { display: block; padding: 0.75rem 0; }
+}
+@media (min-width: 768px) {
+  #navbar-default { display: block !important; }
+}
+
+/* --- Footer --- */
+.site-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+.site-footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* --- Homepage hero --- */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.hero-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+.hero-name {
+  font-size: 2.1rem;
+  margin: 0;
+}
+.hero-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0.4rem 0 0;
+}
+.hero-bio { margin-top: 1.25rem; }
+.hero-bio p { margin: 0.9rem 0; }
+
+/* --- Section heading (Publications) --- */
+.section-heading {
+  margin-top: 3rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* --- Publication cards --- */
+.publications { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.25rem; }
+
+.pub-card {
+  display: flex;
+  gap: 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  transition: border-color 0.15s ease;
+}
+.pub-card:hover { border-color: var(--accent); }
+
+.pub-thumb { flex: 0 0 120px; }
+.pub-thumb img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--thumb-bg);
+}
+
+.pub-body { min-width: 0; }
+.pub-title {
+  font-size: 1.05rem;
+  margin: 0 0 0.4rem;
+  line-height: 1.45;
+}
+.pub-title a { color: var(--text-heading); }
+.pub-title a:hover { color: var(--accent); border-bottom-color: transparent; }
+
+.pub-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0 0 0.5rem;
+}
+.pub-me { color: var(--text-heading); font-weight: 600; }
+
+.pub-description {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 0.6rem;
+}
+
+.pub-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+.pub-links a, .pub-cite summary {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  cursor: pointer;
+}
+.pub-cite { display: inline; }
+.pub-cite[open] { flex-basis: 100%; }
+.pub-cite summary { list-style: none; }
+.pub-cite summary::-webkit-details-marker { display: none; }
+.pub-cite pre {
+  margin-top: 0.75rem;
+  font-size: 0.72rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+@media (max-width: 767px) {
+  .pub-card { flex-direction: column; }
+  .pub-thumb img { width: 100%; height: auto; max-height: 180px; }
+  .hero { flex-direction: column; text-align: center; }
+}
+
+/* --- Listing pages (blog, notes, term pages) --- */
+.page-header h1 { margin-top: 2rem; }
+
+.post-list { list-style: none; margin: 1.5rem 0 0; padding: 0; }
+.post-item { padding: 1.1rem 0; border-bottom: 1px solid var(--border); }
+.post-item:first-child { border-top: 1px solid var(--border); }
+
+.post-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-bottom: none;
+}
+.post-title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+.post-link:hover .post-title { color: var(--accent); }
+.post-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.post-summary {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 0;
+}
+
+/* --- Single article --- */
+.article-title { margin-top: 2rem; margin-bottom: 0.4rem; }
+.article-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+.article-content { overflow-wrap: break-word; }
+
+.article-footer { margin-top: 3rem; }
+.term-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+.term-chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--thumb-bg);
+  color: var(--text-body);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+.term-chip:hover { color: var(--accent); border-bottom-color: transparent; }
+.term-count { color: var(--text-muted); margin-left: 0.25rem; }
+
+.term-cloud { list-style: none; padding: 0; margin: 1.5rem 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+/* --- 404 --- */
+.not-found { text-align: center; margin-top: 4rem; }
+.not-found h1 { font-size: 4rem; margin-bottom: 0; }
