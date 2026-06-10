@@ -456,3 +456,23 @@ main {
 /* --- 404 --- */
 .not-found { text-align: center; margin-top: 4rem; }
 .not-found h1 { font-size: 4rem; margin-bottom: 0; }
+
+/* --- Print (lets the CV page double as a PDF via the print dialog) --- */
+@media print {
+  .site-header, .site-footer,
+  .toc-sidebar, .table-of-contents, .backlinks-sidebar, .notes-search-container {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  main { max-width: none; padding: 0; }
+  h1, h2, h3 { color: #000; page-break-after: avoid; }
+  h2 { border-bottom: 1px solid #999; padding-bottom: 0.2rem; }
+  a { color: #000; border-bottom: none; }
+  li { page-break-inside: avoid; }
+  .article-meta { display: none; }
+}

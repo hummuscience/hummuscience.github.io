@@ -17,7 +17,7 @@ occasionally [write down](/blog/).
 
 ## CV
 
-[Download my CV (PDF)](/cv.pdf)
+[View my CV](/cv/) — printable straight from the browser if you need a PDF.
 
 ## Contact
 
