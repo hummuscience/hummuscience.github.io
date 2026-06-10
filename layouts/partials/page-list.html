@@ -1,0 +1,17 @@
+<ul class="post-list">
+  {{ range .Pages.ByLastmod.Reverse }}
+  <li class="post-item">
+    <a class="post-link" href="{{ .Permalink }}">
+      <span class="post-title">{{ .Title }}</span>
+      {{ $d := cond .PublishDate.IsZero .Lastmod .PublishDate }}
+      {{ if not $d.IsZero }}
+      <time class="post-date" datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "Jan 2, 2006" }}</time>
+      {{ end }}
+    </a>
+    {{ $summary := or .Description (.Summary | plainify) }}
+    {{ with $summary }}
+    <p class="post-summary">{{ . | truncate 160 }}</p>
+    {{ end }}
+  </li>
+  {{ end }}
+</ul>
