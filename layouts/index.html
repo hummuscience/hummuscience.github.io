@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class="hero h-card">
+  {{ with .Params.imgname }}
+  <img class="hero-avatar u-photo" src="/{{ .name }}" alt="{{ .alt }}">
+  {{ end }}
+  <div>
+    <h1 class="hero-name p-name">{{ .Params.name }}</h1>
+    <p class="hero-title">{{ .Params.personal_title }}</p>
+  </div>
+</section>
+
+<div class="hero-bio">
+  {{ .Content }}
+</div>
+
+{{ with .Params.publications }}
+<h2 class="section-heading" id="publications">Publications</h2>
+<div class="publications">
+  {{ range . }}
+  <article class="pub-card" id="{{ anchorize .title }}"
+           itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <div class="pub-thumb">
+      <img src="/{{ .image }}" alt="Figure from: {{ .title }}" loading="lazy" itemprop="image">
+    </div>
+    <div class="pub-body">
+      <h3 class="pub-title">
+        <a href="{{ .pdf }}" itemprop="name">{{ .title }}</a>
+      </h3>
+      <p class="pub-meta">
+        {{ range $i, $a := .authors }}{{ if $i }}, {{ end }}{{ if $a.me }}<strong class="pub-me" itemprop="author">{{ $a.name }}</strong>{{ else }}<span itemprop="author">{{ $a.name }}</span>{{ end }}{{ end }}
+        {{ with .journal }} · <em itemprop="publisher">{{ . }}</em>{{ end }}
+        · <span itemprop="datePublished">{{ .date }}</span>
+      </p>
+      {{ with .description }}
+      <p class="pub-description" itemprop="description">{{ . }}</p>
+      {{ end }}
+      <div class="pub-links">
+        <a href="{{ .pdf }}">PDF</a>
+        {{ range .links }}<a href="{{ .url }}" itemprop="mainEntityOfPage">{{ .name }}</a>{{ end }}
+        {{ with .citation }}
+        <details class="pub-cite">
+          <summary>Cite</summary>
+          <pre><code>{{ . }}</code></pre>
+        </details>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+  {{ end }}
+</div>
+{{ end }}
+{{ end }}
